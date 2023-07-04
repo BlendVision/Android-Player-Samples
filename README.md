@@ -1,5 +1,5 @@
-# UniPlayer
-UniPlayer is a SDK for Android media playback. It provides more convenient API about DRM, media controller. UniPlayer also provide an official graphic user interface. If the official UI doesn't meet your needs, you can easily customize your own UI through the provided API.
+# Integration Guide for Developers
+The tutorial will guide the developer the detailed flow to understand how to integrate with the Android Player SDK step by step in your application. The Android Player SDK, called UniPlayer provides convenient API about DRM, media controller and a generic graphic user interface. If the generic UI doesn't fit your needs, you can easily customize your own UI through the provided API.
 
 ## Get started
 ### Gradle
