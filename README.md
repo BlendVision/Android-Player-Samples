@@ -368,7 +368,7 @@ Following below steps to use Google Cast in your app. If you don't need to use G
    ```
    Screenshot like below
 
-   !<img width="261" height="524" alt="portfolio_view" src="./doc/minicontroller.jpg"> !<img width="261" height="524" alt="portfolio_view" src="./doc/minicontoller_click.jpg">
+   !<img width="261" height="524" alt="portfolio_view" src="https://github.com/BlendVision/Android-Player-SDK/assets/129143433/028594ee-c959-4875-a5dd-c761912c1d3f"> !<img width="261" height="524" alt="portfolio_view" src="https://github.com/BlendVision/Android-Player-SDK/assets/129143433/fb86d181-e3ca-4bdc-acb0-5ef9f805f136">
 
    If you don't like default activity ``CaaSExpandedController`,  just set a activity whatever you wanted but it must extend `ExpandedControllerActivity`
 
