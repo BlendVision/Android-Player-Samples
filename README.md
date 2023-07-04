@@ -1,3 +1,25 @@
+## Develop Environment Requirements
+- Kotlin version 1.6+
+
+## Dependencies
+- com.google.guava:guava:28.0-android
+- com.google.ads.interactivemedia.v3:interactivemedia:3.24.0
+- com.google.android.gms:play-services-cast-framework:21.1.0
+- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4
+- okhttp
+    - com.squareup.okhttp3:okhttp:3.12.2
+    - com.squareup.okhttp3:logging-interceptor:3.12.2
+- com.google.code.gson:gson:2.8.5
+- Glide
+    - com.github.bumptech.glide:glide:4.9.0
+    - com.github.bumptech.glide:compiler:4.9.0 (kapt)
+
+### Gradle.properties
+```
+android.enableDexingArtifactTransform.desugaring=false
+android.enableJetifier=true
+```
+
 # Integration Guide for Developers
 The tutorial will guide the developer the detailed flow to understand how to integrate with the Android Player SDK step by step in your application. The Android Player SDK, called UniPlayer provides convenient API about DRM, media controller and a generic graphic user interface. If the generic UI doesn't fit your needs, you can easily customize your own UI through the provided API.
 
@@ -24,31 +46,6 @@ android {
     }
 }
 ```
-
-### For using UniPlayer, need below library:
-- paas & daas
-- kksplayer
-- kks-network
-
-Library's dependency:
-- com.google.guava:guava:28.0-android
-- com.google.ads.interactivemedia.v3:interactivemedia:3.24.0
-- com.google.android.gms:play-services-cast-framework:21.1.0
-- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4
-- okhttp
-    - com.squareup.okhttp3:okhttp:3.12.2
-    - com.squareup.okhttp3:logging-interceptor:3.12.2
-- com.google.code.gson:gson:2.8.5
-- Glide
-    - com.github.bumptech.glide:glide:4.9.0
-    - com.github.bumptech.glide:compiler:4.9.0 (kapt)
-
-### Gradle.properties
-```
-android.enableDexingArtifactTransform.desugaring=false
-android.enableJetifier=true
-```
-
 
 ## Import method
 ### local AAR files
