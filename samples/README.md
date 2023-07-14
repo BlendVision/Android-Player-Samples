@@ -25,4 +25,5 @@ player = UniPlayer.Builder(
 Every example is available in `Kotlin` :+1:
 
 ### Basics
++   **BasicApi:** Shows how to get the media content with RESTful API from the server.
 +   **BasicPlayback:** Shows how the UniPlayer can be setup for basic playback of DASH with DRM.
