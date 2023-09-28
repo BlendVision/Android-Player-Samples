@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "UniPlayerSample"
 include ':BasicPlayback'
-include ':BasicApi'

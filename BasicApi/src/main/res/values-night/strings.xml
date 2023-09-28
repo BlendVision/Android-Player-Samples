@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="login">login</string>
-    <string name="get_playback_token">get playback token</string>
-    <string name="start_playback_session">start playback session</string>
-    <string name="get_stream_info">get stream info</string>
-    <string name="send_heartbeat">send heartbeat</string>
-    <string name="end_session">end session</string>
-</resources>
