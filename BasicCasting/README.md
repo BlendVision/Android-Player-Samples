@@ -1,9 +1,8 @@
-## Integration CaaS Guide
+## Integration Guide
 
-Following below steps to use Google Cast in your app. If you don't need to use Google Cast, you can
-skip this part.
-CaaS(Cast as a Service) provides `setup()` and `cast()` function to let you can integrate with
-Google Cast SDK conveniently.
+This guide shows how to integrate the Google Cast SDK into your application. We provide a CaaS (Cast
+as a Service) object, which not only contains setup() and cast() functions, but also contains a cast
+event listener, allowing you to complete this feature conveniently.
 
 # Prerequisites
 
@@ -12,16 +11,7 @@ To implement CaaS (Cast as a Service) in your app, please follow the steps outli
 **](https://github.com/BlendVision/Android-Player-SDK/tree/feature/integrate_sample/BasicPlayback)
 section.
 
-# CaaS
-
-CaaS(Cast as a Service) provides `setup()` and `cast()` function to let you can integrate with
-Google Cast SDK conveniently.
-
-## Integration
-
-Following below steps to use Google Cast in your app. If you don't need to use Google Cast, you can
-skip this part.
-
+# Basic Usage
 1. Create a CastOptionProvider class
    ```kotlin
     /**
@@ -49,7 +39,7 @@ skip this part.
    ```
    Screenshot like below
 
-   !<img width="261" height="524" alt="portfolio_view" src="https://github.com/BlendVision/Android-Player-SDK/assets/129143433/028594ee-c959-4875-a5dd-c761912c1d3f"> !<img width="261" height="524" alt="portfolio_view" src="https://github.com/BlendVision/Android-Player-SDK/assets/129143433/fb86d181-e3ca-4bdc-acb0-5ef9f805f136">
+   <img width="261" height="524" alt="portfolio_view" src="https://github.com/BlendVision/Android-Player-SDK/assets/129143433/fb86d181-e3ca-4bdc-acb0-5ef9f805f136">
 
    If you don't like default activity `CaaSExpandedController`, just set a activity whatever you
    wanted but it must extend `ExpandedControllerActivity`
