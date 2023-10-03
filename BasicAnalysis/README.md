@@ -1,7 +1,7 @@
 ## Integration Guide
 
-This guide offers comprehensive instructions for integrating analytics into your Android
-application.
+This guide shows how to send player logs to the player's default analysis service by setting the
+AnalyticsConfig when creating the player.
 
 # Prerequisites
 

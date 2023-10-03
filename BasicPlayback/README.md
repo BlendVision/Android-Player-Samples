@@ -152,7 +152,11 @@ implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_ver
 implementation 'com.squareup.okhttp3:okhttp:' + okhttp_version
 implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
-// gson
+//Retrofit2
+implementation "com.squareup.retrofit2:retrofit:2.9.0"
+implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+//gson
 implementation 'com.google.code.gson:gson:' + gsonVersion
 
 // thumbnail
