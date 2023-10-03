@@ -40,7 +40,7 @@ android {
 
 dependencies {
 
-    implementation fileTree(dir: 'libs', include: ['*.jar', "*.aar"])
+    implementation fileTree(dir: '../libs', include: ['*.jar', "*.aar"])
 
     //Chromecast
     implementation Libs.cast_framework
