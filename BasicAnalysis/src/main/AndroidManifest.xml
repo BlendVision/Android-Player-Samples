@@ -10,6 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UniPlayerSample">
+
+        <meta-data
+            android:name="UNI_PLAYER_LICENSE_KEY"
+            android:value="${YOUR_OWN_LICENSE_KEY}" />
+
         <activity
             android:name=".main.MainActivity"
             android:exported="true">
