@@ -1,9 +1,14 @@
 ## Integration Guide
 
-This guide offers comprehensive instructions for seamlessly integrating KKSPlayerCollector into your
-Android application.  
-The KKSPlayerCollector library provides robust analytics capabilities, allowing you to track various
-metrics such as user interactions, video playbacks, and more.
+This guide offers comprehensive instructions for integrating analytics into your Android
+application.
+
+# Prerequisites
+
+To implement analytics capabilities in your app, please follow the steps outlined in the [*
+*BasicPlayback
+**](https://github.com/BlendVision/Android-Player-SDK/tree/feature/integrate_sample/BasicPlayback)
+section.
 
 ## Importing AAR into Project
 
@@ -71,29 +76,16 @@ val analyticsConfig = AnalyticsConfig.Builder("YOUR_TOKEN") // token is required
    .build()
 ```
 
-#### Step 2: Create `KKSPlayerCollector`
+#### Step 2: Set AnalyticsConfig to UniPlayer
 
-You will need to create an instance of KKSPlayerCollector by passing the context and analyticsConfig
-as parameters.
+call setAnalyticsConfig() method from player and inject AnalyticsConfig.
 
 ```kotlin
-val kksPlayerCollector = KKSPlayerCollector
-   .Builder(context, analyticsConfig) // context and analyticsConfig are required
+val uniPlayer = UniPlayer.Builder(requireContext(), createPlayConfigFromArgument())
+   .setAnalyticsConfig(analyticsConfig)//set analyticsConfig
    .build()
 ```
 
-#### Step 3: Invoke `sentEvent()` Method
 
-To send an analytics event, call the `sentEvent()` method on the `KKSPlayerCollector` instance.
 
-```kotlin
-kksPlayerCollector.sentEvent(eventName, properties)
-```
 
-## Release Resources
-
-It's essential to release resources when the player is destroyed to prevent memory leaks.
-
-```kotlin
-kksPlayerCollector.release()
-```
