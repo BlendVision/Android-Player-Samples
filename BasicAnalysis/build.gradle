@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.kkstream.basicanalysis.sample'
+    compileSdk BuildVersion.compileSdk
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    defaultConfig {
+        applicationId "com.kkstream.basicanalysis.sample"
+        minSdk BuildVersion.minSdk
+        targetSdk BuildVersion.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar', "*.aar"])
+
+    //coroutines
+    implementation Libs.coroutines
+
+    //gson
+    implementation Libs.gson
+
+    //retrofit2
+    implementation Libs.retrofit2
+    implementation Libs.converterGson
+
+    //okhttp_logging_interceptor
+    implementation Libs.okhttp_logging_interceptor
+
+    //koin
+    implementation Libs.koin
+
+    implementation Libs.constraintlayout
+    implementation Libs.core_ktx
+    implementation Libs.appcompat
+    implementation Libs.material
+    testImplementation Libs.junit
+    androidTestImplementation Libs.ext_junit
+    androidTestImplementation Libs.espresso_core
+}
