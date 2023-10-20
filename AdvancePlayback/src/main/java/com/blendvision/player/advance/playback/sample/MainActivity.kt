@@ -1,14 +1,14 @@
-package com.kkstream.uniplayersample.main
+package com.blendvision.player.advance.playback.sample
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.blendvision.player.advance.playback.sample.databinding.ActivityMainBinding
 import com.kkstream.playcraft.paas.player.common.ContentType
 import com.kkstream.playcraft.paas.player.common.data.SettingOptionConfig
 import com.kkstream.playcraft.paas.player.mobile.DefaultDialogEventListener
 import com.kkstream.playcraft.paas.player.mobile.DefaultMenuFactory
-import com.kkstream.uniplayersample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +40,14 @@ class MainActivity : AppCompatActivity() {
             defaultContentType = ContentType.EMBEDDED
         )
 
+        customizationPlayerUI()
+
+        viewBinding.kksPlayerServiceView.setUnifiedPlayer(mainViewModel.getPlayer())
+
+    }
+
+    //You can refer to the following example to understand how to customize the player UI.
+    private fun customizationPlayerUI(){
         // Set default dialog for error handling
         val defaultDialogEventListener =
             DefaultDialogEventListener(this, viewBinding.kksPlayerServiceView)
@@ -55,9 +63,6 @@ class MainActivity : AppCompatActivity() {
                 forceHideAutoPlay = true
             )
         )
-
-        viewBinding.kksPlayerServiceView.setUnifiedPlayer(mainViewModel.getPlayer())
-
     }
 
     private fun createTopMenuItems(): List<View> {

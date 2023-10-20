@@ -1,4 +1,4 @@
-package com.kkstream.uniplayersample.main
+package com.blendvision.player.advance.playback.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -17,6 +17,7 @@ class MainViewModel : ViewModel() {
             MediaConfig.Source(
                 url = "MPD_URL",
                 protocol = MediaConfig.Protocol.DASH,
+                //DRM info
                 drm = MediaConfig.DrmInfo.Widevine(
                     licenseUrl = "DRM_SERVER_URL",
                     headers = mapOf("KEY" to "VALUE")
@@ -25,7 +26,8 @@ class MainViewModel : ViewModel() {
         ),
         title = "CONTENT_TITLE",
         imageUrl = "COVER_IMAGE",
-        thumbnailSeekingUrl = null,
+        //If you have set thumbnailSeekingUrl and the isThumbnailSeekingEnabled setting in the PlayerOptions object is set to true, the player will enable thumbnail seeking when the seek bar is changed.
+        thumbnailSeekingUrl = "THUMBNAIL_SEEKING_URL",
         playWhenReady = true,
         sharedUrl = "SHARED_INFO",
         description = "DESC_INFO"
@@ -49,6 +51,7 @@ class MainViewModel : ViewModel() {
         // Optional settings for the player
         player.setPlayerOptions(
             PlayerOptions(
+                //Enabled Thumbnail Seeking
                 isThumbnailSeekingEnabled = true
             )
         )
