@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".main.MainActivity">
+    tools:context="com.blendvision.player.basic.playback.sample.MainActivity">
 
     <com.kkstream.playcraft.paas.player.mobile.UniView
         android:id="@+id/kksPlayerServiceView"
