@@ -1,4 +1,4 @@
-package com.blendvision.player.advance.playback.sample
+package com.blendvision.player.advanced.playback.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

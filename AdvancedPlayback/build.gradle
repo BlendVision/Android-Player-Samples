@@ -5,7 +5,7 @@ plugins {
 
 android {
 
-    namespace 'com.blendvision.player.advance.playback.sample'
+    namespace 'com.blendvision.player.advanced.playback.sample'
 
     compileSdk BuildVersion.compileSdk
 
@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.blendvision.player.advance.playback.sample"
+        applicationId "com.blendvision.player.advanced.playback.sample"
         minSdk BuildVersion.minSdk
         targetSdk BuildVersion.targetSdk
         versionCode 1

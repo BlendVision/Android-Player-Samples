@@ -17,4 +17,4 @@ rootProject.name = "UniPlayerSample"
 include ':BasicPlayback'
 include ':BasicAnalysis'
 include ':BasicCasting'
-include ':AdvancePlayback'
+include ':AdvancedPlayback'

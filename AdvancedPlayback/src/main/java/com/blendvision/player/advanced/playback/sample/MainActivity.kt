@@ -1,10 +1,10 @@
-package com.blendvision.player.advance.playback.sample
+package com.blendvision.player.advanced.playback.sample
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.blendvision.player.advance.playback.sample.databinding.ActivityMainBinding
+import com.blendvision.player.advanced.playback.sample.databinding.ActivityMainBinding
 import com.kkstream.playcraft.paas.player.common.ContentType
 import com.kkstream.playcraft.paas.player.common.data.SettingOptionConfig
 import com.kkstream.playcraft.paas.player.mobile.DefaultDialogEventListener
