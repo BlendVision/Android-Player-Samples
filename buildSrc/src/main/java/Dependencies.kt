@@ -23,6 +23,10 @@ private object LibsVersions {
     const val activityVersion = "1.6.1"
     const val guavaVersion = "27.1-android"
     const val imaVersion = "3.24.0"
+    const val rxkotlinVersion = "2.3.0"
+    const val rxjavaVersion = "2.2.9"
+    const val rxandroidVersion = "2.1.0"
+    const val leanbackVersion = "1.0.0"
 }
 
 object Libs {
@@ -72,6 +76,17 @@ object Libs {
     //okhttp3 logging-interceptor
     const val okhttp_logging_interceptor =
         "com.squareup.okhttp3:logging-interceptor:${LibsVersions.okhttpLoggingInterceptor}"
+
+    //Rxkotlin
+    const val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${LibsVersions.rxkotlinVersion}"
+
+    //Rxjava
+    const val rxjava = "io.reactivex.rxjava2:rxjava:${LibsVersions.rxjavaVersion}"
+
+    //Rxandroid
+    const val rxandroid = "io.reactivex.rxjava2:rxandroid:${LibsVersions.rxandroidVersion}"
+    //leanback
+    const val leanback = "androidx.leanback:leanback:${LibsVersions.leanbackVersion}"
 
     const val core_ktx = "androidx.core:core-ktx:${LibsVersions.coreKtxVersion}"
     const val appcompat = "androidx.appcompat:appcompat:${LibsVersions.appcompatVersion}"
