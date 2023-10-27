@@ -22,12 +22,12 @@ Demonstrates the configuration for sending analytics events for basic analysis.
 Explains how to stream video and audio directly to a TV.  
 [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicPlayback):
 Illustrates the setup for basic playback of DASH streams using UniPlayer.
-
+[**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicTVPlayback):
+Illustrates the setup for basic TV playback of DASH streams using UniPlayer.
 ### Advanced
 
-[**AdvancedPlayback
-**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/AdvancedPlayback): Illustrates
-the
-setup for playback of DASH streams with DRM support 、 enable Thumbnail Seeking 、UI Customization
+[**AdvancedPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/AdvancedPlayback): Illustrates
+the setup for playback of DASH streams with DRM support 、 enable Thumbnail Seeking 、UI Customization
 using UniPlayer. 
+
 
