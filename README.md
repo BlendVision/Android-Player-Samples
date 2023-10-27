@@ -21,7 +21,7 @@ Demonstrates the configuration for sending analytics events for basic analysis.
 [**BasicCasting**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicCasting):
 Explains how to stream video and audio directly to a TV.  
 [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicPlayback):
-Illustrates the setup for basic playback of DASH streams using UniPlayer.
+Illustrates the setup for basic playback of DASH streams using UniPlayer.  
 [**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicTVPlayback):
 Illustrates the setup for basic TV playback of DASH streams using UniPlayer.
 ### Advanced
