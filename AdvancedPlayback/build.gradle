@@ -4,7 +4,9 @@ plugins {
 }
 
 android {
-    namespace 'com.blendvision.player.basic.analysis.sample'
+
+    namespace 'com.blendvision.player.advanced.playback.sample'
+
     compileSdk BuildVersion.compileSdk
 
     buildFeatures {
@@ -12,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.blendvision.player.basic.analysis.sample"
+        applicationId "com.blendvision.player.advanced.playback.sample"
         minSdk BuildVersion.minSdk
         targetSdk BuildVersion.targetSdk
         versionCode 1
@@ -75,7 +77,6 @@ dependencies {
 
     //Google IMA SDK, used in PaaS
     implementation Libs.IMA
-
 
     implementation Libs.constraintlayout
     implementation Libs.core_ktx

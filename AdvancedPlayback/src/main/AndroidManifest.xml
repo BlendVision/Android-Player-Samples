@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,18 +8,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UniPlayerSample">
-
-        <!--This meta data is used for Google Cast framework-->
-        <meta-data
-            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="com.kkstream.basiccasting.sample.CastOptionsProvider" />
-
-        <meta-data
-            android:name="UNI_PLAYER_LICENSE_KEY"
-            android:value="${YOUR_OWN_LICENSE_KEY}" />
-
         <activity
-            android:name="com.blendvision.player.basic.casting.sample.MainActivity"
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="UNI_PLAYER_LICENSE_KEY"
+            android:value="${YOUR_OWN_LICENSE_KEY}" />
     </application>
 
 </manifest>
