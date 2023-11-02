@@ -31,8 +31,8 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun setupUniTvFragment() {
-        val unPlayer = viewModel.setupPlayer(this)
-        uniTvFragment.setup(unPlayer)
+        val player = viewModel.setupPlayer(this)
+        uniTvFragment.setup(player)
         uniTvFragment.setPaasThemeColorStyle(R.style.UpdateCustomizeIconColor)
         uniTvFragment.setControlStateEventListener(object : ControlStateEventListener {
             override fun onControlStateChanged(newState: StateType) {
