@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.kkstream.basicanalysis.sample'
+    namespace 'com.blendvision.player.basic.analysis.sample'
     compileSdk BuildVersion.compileSdk
 
     buildFeatures {
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kkstream.basicanalysis.sample"
+        applicationId "com.blendvision.player.basic.analysis.sample"
         minSdk BuildVersion.minSdk
         targetSdk BuildVersion.targetSdk
         versionCode 1
@@ -77,6 +77,7 @@ dependencies {
     implementation Libs.IMA
 
 
+    implementation Libs.constraintlayout
     implementation Libs.core_ktx
     implementation Libs.appcompat
     implementation Libs.material

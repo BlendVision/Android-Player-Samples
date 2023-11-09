@@ -21,7 +21,7 @@
             android:value="${YOUR_OWN_LICENSE_KEY}" />
 
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.blendvision.player.basic.casting.sample.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

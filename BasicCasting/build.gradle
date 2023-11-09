@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.kkstream.basiccasting.sample'
+    namespace 'com.blendvision.player.basic.casting.sample'
     compileSdk BuildVersion.compileSdk
 
     buildFeatures {
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kkstream.basiccasting.sample"
+        applicationId "com.blendvision.player.basic.casting.sample"
         minSdk BuildVersion.minSdk
         targetSdk BuildVersion.targetSdk
         versionCode 1
