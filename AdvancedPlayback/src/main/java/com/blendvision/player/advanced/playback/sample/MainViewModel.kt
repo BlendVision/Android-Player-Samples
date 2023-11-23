@@ -2,11 +2,11 @@ package com.blendvision.player.advanced.playback.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.kkstream.playcraft.paas.player.common.PlayerConfig
-import com.kkstream.playcraft.paas.player.common.UniPlayer
-import com.kkstream.playcraft.paas.player.common.callback.PlayLogger
-import com.kkstream.playcraft.paas.player.common.data.MediaConfig
-import com.kkstream.playcraft.paas.player.common.data.PlayerOptions
+import com.blendvision.player.playback.player.common.PlayerConfig
+import com.blendvision.player.playback.player.common.UniPlayer
+import com.blendvision.player.playback.player.common.callback.PlayLogger
+import com.blendvision.player.playback.player.common.data.MediaConfig
+import com.blendvision.player.playback.player.common.data.PlayerOptions
 
 class MainViewModel : ViewModel() {
 

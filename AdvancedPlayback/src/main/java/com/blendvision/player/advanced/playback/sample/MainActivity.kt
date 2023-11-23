@@ -5,10 +5,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.advanced.playback.sample.databinding.ActivityMainBinding
-import com.kkstream.playcraft.paas.player.common.ContentType
-import com.kkstream.playcraft.paas.player.common.data.SettingOptionConfig
-import com.kkstream.playcraft.paas.player.mobile.DefaultDialogEventListener
-import com.kkstream.playcraft.paas.player.mobile.DefaultMenuFactory
+import com.blendvision.player.playback.player.common.PanelType
+import com.blendvision.player.playback.player.common.data.SettingOptionConfig
+import com.blendvision.player.playback.player.mobile.DefaultDialogEventListener
+import com.blendvision.player.playback.player.mobile.DefaultMenuFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,14 +35,14 @@ class MainActivity : AppCompatActivity() {
     private fun configurePlayer() {
 
         // Setup the type of control panel
-        viewBinding.kksPlayerServiceView.setupControlPanel(
+        viewBinding.playerView.setupControlPanel(
             autoKeepScreenOnEnabled = true,
-            defaultContentType = ContentType.EMBEDDED
+            defaultPanelType = PanelType.EMBEDDED
         )
 
         customizationPlayerUI()
 
-        viewBinding.kksPlayerServiceView.setUnifiedPlayer(mainViewModel.getPlayer())
+        viewBinding.playerView.setUnifiedPlayer(mainViewModel.getPlayer())
 
     }
 
@@ -50,15 +50,15 @@ class MainActivity : AppCompatActivity() {
     private fun customizationPlayerUI(){
         // Set default dialog for error handling
         val defaultDialogEventListener =
-            DefaultDialogEventListener(this, viewBinding.kksPlayerServiceView)
-        viewBinding.kksPlayerServiceView.setDialogEventListener(defaultDialogEventListener)
+            DefaultDialogEventListener(this, viewBinding.playerView)
+        viewBinding.playerView.setDialogEventListener(defaultDialogEventListener)
 
         // Create setting dialog
-        viewBinding.kksPlayerServiceView.setupTopMenuItems(createTopMenuItems())
-        viewBinding.kksPlayerServiceView.setupBottomMenuItems(createBottomMenuItems())
+        viewBinding.playerView.setupTopMenuItems(createTopMenuItems())
+        viewBinding.playerView.setupBottomMenuItems(createBottomMenuItems())
 
         // Hide useless options
-        viewBinding.kksPlayerServiceView.configureSettingOption(
+        viewBinding.playerView.configureSettingOption(
             SettingOptionConfig(
                 forceHideAutoPlay = true
             )
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createTopMenuItems(): List<View> {
-        val menuFactory = DefaultMenuFactory(viewBinding.kksPlayerServiceView)
+        val menuFactory = DefaultMenuFactory(viewBinding.playerView)
         return listOf(
             menuFactory.createInfoMenuItem(),
             menuFactory.createShareMenuItem {
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createBottomMenuItems(): List<View> {
-        val menuFactory = DefaultMenuFactory(viewBinding.kksPlayerServiceView)
+        val menuFactory = DefaultMenuFactory(viewBinding.playerView)
         fullscreenButton = menuFactory.createFullScreenMenuItem { isFullScreen ->
             // TODO callback for onClick event
         }
