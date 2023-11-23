@@ -5,10 +5,10 @@ import android.view.KeyEvent
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.playback.tvsample.databinding.ActivityMainBinding
-import com.kkstream.playcraft.paas.player.common.callback.ControlStateEventListener
-import com.kkstream.playcraft.paas.player.stb.CustomUniTVFragmentInterface
-import com.kkstream.playcraft.paas.player.stb.StateType
-import com.kkstream.playcraft.paas.player.stb.UniTvFragment
+import com.blendvision.player.playback.player.common.callback.ControlStateEventListener
+import com.blendvision.player.playback.player.stb.CustomUniTVFragmentInterface
+import com.blendvision.player.playback.player.stb.StateType
+import com.blendvision.player.playback.player.stb.UniTvFragment
 
 class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityMainBinding
