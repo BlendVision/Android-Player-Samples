@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.analysis.sample.databinding.ActivityMainBinding
-import com.kkstream.playcraft.paas.player.common.ContentType
-import com.kkstream.playcraft.paas.player.common.data.SettingOptionConfig
+import com.blendvision.player.playback.player.common.PanelType
+import com.blendvision.player.playback.player.common.data.SettingOptionConfig
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,19 +29,19 @@ class MainActivity : AppCompatActivity() {
     private fun configurePlayer() {
 
         // Setup the type of control panel
-        viewBinding.kksPlayerServiceView.setupControlPanel(
+        viewBinding.playerView.setupControlPanel(
             autoKeepScreenOnEnabled = true,
-            defaultContentType = ContentType.EMBEDDED
+            defaultPanelType = PanelType.EMBEDDED
         )
 
         // Hide useless options
-        viewBinding.kksPlayerServiceView.configureSettingOption(
+        viewBinding.playerView.configureSettingOption(
             SettingOptionConfig(
                 forceHideAutoPlay = true
             )
         )
 
-        viewBinding.kksPlayerServiceView.setUnifiedPlayer(mainViewModel.getPlayer())
+        viewBinding.playerView.setUnifiedPlayer(mainViewModel.getPlayer())
 
     }
 

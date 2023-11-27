@@ -6,7 +6,7 @@ event listener, allowing you to complete this feature conveniently.
 
 # Prerequisites
 
-To implement CaaS (Cast as a Service) in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicPlayback) section.  
+To implement CaaS (Cast as a Service) in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.  
 
 # Basic Usage
 1. Create a CastOptionProvider class

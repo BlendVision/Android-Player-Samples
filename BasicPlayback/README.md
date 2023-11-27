@@ -6,7 +6,6 @@ convenient APIs for DRM, media controllers, and a generic UI that can be customi
 ## Dependencies
 
 - com.google.guava:guava
-- com.google.ads.interactivemedia.v3:interactivemedia
 - com.google.android.gms:play-services-cast-framework
 - org.jetbrains.kotlinx:kotlinx-coroutines-android
 - okhttp
@@ -28,14 +27,14 @@ android.enableJetifier=true
 
 ### Gradle
 
-```
+```groovy
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         ...
         minSdk 21
-        targetSdk 31
+        targetSdk 33
         ...
     }
 
@@ -56,13 +55,13 @@ android {
 
 Add following `.aar` files to `libs/`.
 
-```
+```groovy
 // UniPlayer
-kks-playcraft-daas.aar
-kks-playcraft-paas.aar
+kks-playback.aar
+kks-download.aar
 ```
 
-```
+```groovy
 // KKSPlayer
 kksplayer.aar
 kksplayer-kkdrm.aar
@@ -73,12 +72,12 @@ kksplayer-library-dash-release.aar
 kksplayer-library-ui-release.aar
 ```
 
-```
+```groovy
 // KKS-analytics
 kks-analytics.aar
 ```
 
-```
+```groovy
 // KKS-network
 kks-network.aar
 ```
@@ -87,14 +86,14 @@ kks-network.aar
 
 - add below url in gradle repositories
 
-```
+```groovy
 // UniPlayer
 maven {
     url "https://kks-devops-assets.s3-ap-northeast-1.amazonaws.com/kks-trc/android/libs"
 }
 ```
 
-```
+```groovy
 // KKSPlayer & KKSNetwork
 maven {
     url "https://kks-devops-assets.s3-ap-northeast-1.amazonaws.com/kks-ottfs/android/libs"
@@ -103,10 +102,11 @@ maven {
 
 - Setting for gradle file
 
-```
+```groovy
 // UniPlayer
-implementation "com.kkstream.android.ottfs.player:kks-playcraft-daas:" + paas_version
-implementation "com.kkstream.android.ottfs.player:kks-playcraft-paas:" + paas_version
+implementation "com.blendvision.player:kks-download:" + version
+implementation "com.blendvision.player:kks-playback:" + version
+implementation "com.blendvision.player:kks-analytics:" + version
 
 // KKSPlayer
 implementation "com.kkstream.android.ottfs.player:kksplayer-kkdrm:" + kksplayer_version
@@ -123,11 +123,7 @@ implementation "com.kkstream.android.ottfs.network:kks-network:" + kknetwork_ver
 
 - others (can be imported from public maven)
 
-```
-plugins {
-    ...
-    id 'kotlin-kapt'
-}
+```groovy
 
 api ('com.google.guava:guava:' + guava_version) {
     // Exclude dependencies that are only used by Guava at compile time
@@ -139,8 +135,6 @@ api ('com.google.guava:guava:' + guava_version) {
     exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
 }
 
-//Google IMA SDK
-implementation "com.google.ads.interactivemedia.v3:interactivemedia:$google_ima_version"
 
 //Chromecast
 implementation "com.google.android.gms:play-services-cast-framework:$cast_version"
@@ -159,9 +153,8 @@ implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 //gson
 implementation 'com.google.code.gson:gson:' + gsonVersion
 
-// thumbnail
+//thumbnail
 implementation "com.github.bumptech.glide:glide:$glideVersion"
-kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
 //koin
 implementation "io.insert-koin:koin-android:$koinVersion"
@@ -173,8 +166,8 @@ This section will show how to basically play media step by step
 
 ## Put the player's view (UniView) in xml
 
-```xml=
-...
+```xml
+
 <FrameLayout
     android:id="@+id/player_view_root"
     android:layout_width="match_parent"
@@ -183,21 +176,21 @@ This section will show how to basically play media step by step
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <com.kkstream.playcraft.paas.player.mobile.UniView
-        android:id="@+id/kks_player_service_view"
+    <com.blendvision.player.playback.player.mobile.UniView
+        android:id="@+id/playerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
 </FrameLayout>
-...
+
 ```
 
 ## Setup the type of control panel
 
-```kotlin=
-binding.kksPlayerServiceView.setupControlPanel(
-    autoKeepScreenOnEnabled = SampleApp.appSetting.autoKeepScreenOn,
-    defaultContentType = ContentType.EMBEDDED
+```kotlin
+binding.playerView.setupControlPanel(
+    autoKeepScreenOnEnabled = true,
+    defaultPanelType = PanelType.EMBEDDED
 )
 ```
 
@@ -216,13 +209,13 @@ player = UniPlayer.Builder(
   )
 ).build()
 
-binding.kksPlayerServiceView.setUnifiedPlayer(player)
+binding.playerView.setUnifiedPlayer(player)
 ```
 
 - You can also set the license in the AndroidManifest.xml by using `UNI_PLAYER_LICENSE_KEY` keyword.
   The order UniPlayer adopts is first check `PlayerConfig` and then check `meta-data`.
 
-```xml=
+```xml
 <meta-data
     android:name="UNI_PLAYER_LICENSE_KEY"
     android:value="YOUR_LICENSE_KEY" />
@@ -232,7 +225,7 @@ binding.kksPlayerServiceView.setUnifiedPlayer(player)
 
 ## [Optional] Configure player optional setting
 
-```kotlin=
+```kotlin
 player?.setPlayerOptions(
     PlayerOptions(
         isThumbnailSeekingEnabled = true
@@ -242,7 +235,7 @@ player?.setPlayerOptions(
 
 ## Prepare media content
 
-```kotlin=
+```kotlin
 val mediaConfig = MediaConfig(
     source = listOf(
         MediaConfig.Source(
@@ -262,14 +255,14 @@ val mediaConfig = MediaConfig(
 
 ## Set default dialog for error handling
 
-```kotlin=
-val defaultDialogEventListener = DefaultDialogEventListener(requireActivity(), binding.kksPlayerServiceView)
-binding.kksPlayerServiceView.setDialogEventListener(defaultDialogEventListener)
+```kotlin
+val defaultDialogEventListener = DefaultDialogEventListener(requireActivity(), binding.playerView)
+binding.playerView.setDialogEventListener(defaultDialogEventListener)
 ```
 
 ## Basic playback interface
 
-```kotlin=
+```kotlin
 // play
 player?.load(mediaConfig)
 player?.start()
@@ -284,19 +277,19 @@ player?.release()
 - PS: UniView also provides a default player lifecycle, which can be called to easily map to the
   lifecycle of activity/fragment.
 
-```kotlin=
-binding.kksPlayerServiceView.onResume()
-binding.kksPlayerServiceView.onStart()
-binding.kksPlayerServiceView.onPause()
-binding.kksPlayerServiceView.onStop()
-binding.kksPlayerServiceView.onDestroy()
+```kotlin
+binding.playerView.onResume()
+binding.playerView.onStart()
+binding.playerView.onPause()
+binding.playerView.onStop()
+binding.playerView.onDestroy()
 ```
 
 ## Log/Error/player state listener
 
 #### Log
 
-```kotlin=
+```kotlin
 PlayerConfig(
     ...,
     playLogger = object : PlayLogger {
@@ -309,7 +302,7 @@ PlayerConfig(
 
 #### Error event
 
-```kotlin=
+```kotlin
 player?.addErrorEventListener(object : ErrorEventCallback {
     override fun onUniError(errorEvent: UniErrorEvent): Boolean {
         // do something
@@ -320,7 +313,7 @@ player?.addErrorEventListener(object : ErrorEventCallback {
 
 #### Player state
 
-```kotlin=
+```kotlin
 player?.addStateEventListener(object : StateEventListener {
     override suspend fun onContentChanged(content: Content): UniErrorEvent? {
         // do something
@@ -349,9 +342,9 @@ player?.addStateEventListener(object : StateEventListener {
 
 1. setup pinp handler within player view. (This feature is only supported on Android 8.0+)
 
-```kotlin=
+```kotlin
 val handler = DefaultPictureInPictureHandler(requireActivity())
-binding.uniView.setPictureInPictureHandler(
+binding.playerView.setPictureInPictureHandler(
     handler
 )
 ```
@@ -359,13 +352,13 @@ binding.uniView.setPictureInPictureHandler(
 2. call entering method to enable the PinP, you can call it in lifecycle event, onClick event,
    guesture handle...etc.
 
-```kotlin=
-binding.kksPlayerServiceView.enterPictureInPicture()
+```kotlin
+binding.playerView.enterPictureInPicture()
 ```
 
 3. override the `onPictureInPictureModeChanged` method
 
-```kotlin=
+```kotlin
 override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
     super.onPictureInPictureModeChanged(isInPictureInPictureMode)
 
@@ -377,7 +370,7 @@ override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
     }
 
     // To reset the `isInPictureInPictureMode` parameter in `DefaultPictureInPictureHandler`, the following method needs to be called.
-    binding.kksPlayerServiceView.onPictureInPictureModeChanged(isInPictureInPictureMode)
+    binding.playerView.onPictureInPictureModeChanged(isInPictureInPictureMode)
 }
 ```
 
@@ -391,7 +384,7 @@ override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
 - To ensure a single activity is used for video playback requests and switched into or out of PiP
   mode as needed, set the activity's android:launchMode to singleTask in your manifest.
 
-```xml=
+```xml
 <activity
     android:name=".xxxx.xxxx"
     android:supportsPictureInPicture="true"

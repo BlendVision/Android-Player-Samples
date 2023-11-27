@@ -22,7 +22,6 @@ private object LibsVersions {
     const val espressoCoreVersion = "3.5.1"
     const val activityVersion = "1.6.1"
     const val guavaVersion = "27.1-android"
-    const val imaVersion = "3.24.0"
     const val rxkotlinVersion = "2.3.0"
     const val rxjavaVersion = "2.2.9"
     const val rxandroidVersion = "2.1.0"
@@ -30,8 +29,6 @@ private object LibsVersions {
 }
 
 object Libs {
-
-    const val IMA = "com.google.ads.interactivemedia.v3:interactivemedia:${LibsVersions.imaVersion}"
 
     const val guava = "com.google.guava:guava:${LibsVersions.guavaVersion}"
 
