@@ -5,7 +5,7 @@ AnalyticsConfig when creating the player.
 
 # Prerequisites
 
-To implement audio capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicPlayback) section.  
+To implement audio capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.  
 
 ## Importing AAR into Project
 
