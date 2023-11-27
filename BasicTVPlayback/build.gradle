@@ -72,9 +72,6 @@ dependencies {
         exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
     }
 
-    //Google IMA SDK, used in PaaS
-    implementation Libs.IMA
-
     //Rxkotlin
     implementation Libs.rxkotlin
     //Rxjava

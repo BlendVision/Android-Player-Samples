@@ -5,7 +5,7 @@ AnalyticsConfig when creating the player.
 
 # Prerequisites
 
-To implement analytics capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/develop/BasicPlayback) section.  
+To implement analytics capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.  
 
 ## Importing AAR into Project
 
@@ -20,7 +20,7 @@ including a simplified approach using `implementation fileTree`.
 2. **Update `build.gradle`**: In your app-level `build.gradle` file, add the following line in
    the `dependencies` block:
 
-    ```gradle
+    ```groovy
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     ```
 
@@ -28,7 +28,7 @@ including a simplified approach using `implementation fileTree`.
 
 3. **Add Dependencies**
 
-```gradle
+```groovy
 
     //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"

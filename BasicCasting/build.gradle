@@ -73,9 +73,6 @@ dependencies {
         exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
     }
 
-    //Google IMA SDK, used in PaaS
-    implementation Libs.IMA
-
     implementation Libs.constraintlayout
     implementation Libs.core_ktx
     implementation Libs.appcompat

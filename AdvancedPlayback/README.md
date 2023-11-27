@@ -3,169 +3,54 @@
 This guide details how to integrate the UniPlayer into your application. UniPlayer provides
 convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
 
-## Dependencies
+# Prerequisites
 
-- com.google.guava:guava
-- com.google.ads.interactivemedia.v3:interactivemedia
-- com.google.android.gms:play-services-cast-framework
-- org.jetbrains.kotlinx:kotlinx-coroutines-android
-- okhttp
-  - com.squareup.okhttp3:okhttp
-  - com.squareup.okhttp3:logging-interceptor
-- com.google.code.gson:gson
-- Glide
-  - com.github.bumptech.glide:glide
-- io.insert-koin:koin-android
+To implement advanced capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.
 
-### Gradle.properties
+## Importing AAR into Project
 
-```
-android.enableDexingArtifactTransform.desugaring=false
-android.enableJetifier=true
-```
+There are multiple ways to integrate an AAR file into your Android project. Below are the methods,
+including a simplified approach using `implementation fileTree`.
 
-## Get started
+### Manual Import with `fileTree`
 
-### Gradle
+1. **Place AAR File in `libs` Directory**: Ensure the `.aar` (and/or `.jar`) file is located within
+   the `libs` directory of your Android project.
 
-```
-android {
-    compileSdk 31
+2. **Update `build.gradle`**: In your app-level `build.gradle` file, add the following line in
+   the `dependencies` block:
 
-    defaultConfig {
-        ...
-        minSdk 21
-        targetSdk 31
-        ...
-    }
+    ```groovy
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    ```
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = '11'
-        freeCompilerArgs = ['-Xjvm-default=compatibility']
-    }
-}
-```
+   This will include all `.jar` and `.aar` files that are in the `libs` directory into your project.
 
-## Import method
+3. **Add Dependencies**
 
-### local AAR files
+```groovy
 
-Add following `.aar` files to `libs/`.
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+
+    //gson
+    implementation "com.google.code.gson:gson:2.10.1"
+
+    //retrofit2
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //okhttp_logging_interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    //koin
+    implementation "io.insert-koin:koin-android:3.4.3"
 
 ```
-// UniPlayer
-kks-playcraft-daas.aar
-kks-playcraft-paas.aar
-```
 
-```
-// KKSPlayer
-kksplayer.aar
-kksplayer-kkdrm.aar
-kksplayer-library-core-release.aar
-kksplayer-library-common-release.aar
-kksplayer-library-extractor-release.aar
-kksplayer-library-dash-release.aar
-kksplayer-library-ui-release.aar
-```
+> **Note**: After making changes, don't forget to sync your Gradle files to ensure that the project
+> compiles successfully.
 
-```
-// KKS-analytics
-kks-analytics.aar
-```
-
-```
-// KKS-network
-kks-network.aar
-```
-
-### Private maven bucket
-
-- add below url in gradle repositories
-
-```
-// UniPlayer
-maven {
-    url "https://kks-devops-assets.s3-ap-northeast-1.amazonaws.com/kks-trc/android/libs"
-}
-```
-
-```
-// KKSPlayer & KKSNetwork
-maven {
-    url "https://kks-devops-assets.s3-ap-northeast-1.amazonaws.com/kks-ottfs/android/libs"
-}
-```
-
-- Setting for gradle file
-
-```
-// UniPlayer
-implementation "com.kkstream.android.ottfs.player:kks-playcraft-daas:" + paas_version
-implementation "com.kkstream.android.ottfs.player:kks-playcraft-paas:" + paas_version
-
-// KKSPlayer
-implementation "com.kkstream.android.ottfs.player:kksplayer-kkdrm:" + kksplayer_version
-implementation "com.kkstream.android.ottfs.player:kksplayer-library-core:" + kksplayer_version
-implementation "com.kkstream.android.ottfs.player:kksplayer-library-dash:" + kksplayer_version
-implementation "com.kkstream.android.ottfs.player:kksplayer-library-ui:" + kksplayer_version
-implementation "com.kkstream.android.ottfs.player:kksplayer-library-common:" + kksplayer_version
-implementation "com.kkstream.android.ottfs.player:kksplayer-library-extractor:" + kksplayer_version
-implementation "com.kkstream.android.ottfs.player:kksplayer:" + kksplayer_version
-
-// KKSNetwork
-implementation "com.kkstream.android.ottfs.network:kks-network:" + kknetwork_version
-```
-
-- others (can be imported from public maven)
-
-```
-plugins {
-    ...
-    id 'kotlin-kapt'
-}
-
-api ('com.google.guava:guava:' + guava_version) {
-    // Exclude dependencies that are only used by Guava at compile time
-    // (but declared as runtime deps) [internal b/168188131].
-    exclude group: 'com.google.code.findbugs', module: 'jsr305'
-    exclude group: 'org.checkerframework', module: 'checker-compat-qual'
-    exclude group: 'com.google.errorprone', module: 'error_prone_annotations'
-    exclude group: 'com.google.j2objc', module: 'j2objc-annotations'
-    exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
-}
-
-//Google IMA SDK
-implementation "com.google.ads.interactivemedia.v3:interactivemedia:$google_ima_version"
-
-//Chromecast
-implementation "com.google.android.gms:play-services-cast-framework:$cast_version"
-
-//Coroutines
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
-
-//Okhttp
-implementation 'com.squareup.okhttp3:okhttp:' + okhttp_version
-implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
-
-//Retrofit2
-implementation "com.squareup.retrofit2:retrofit:2.9.0"
-implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-
-//gson
-implementation 'com.google.code.gson:gson:' + gsonVersion
-
-// thumbnail
-implementation "com.github.bumptech.glide:glide:$glideVersion"
-kapt "com.github.bumptech.glide:compiler:$glideVersion"
-
-//koin
-implementation "io.insert-koin:koin-android:$koinVersion"
-```
 
 # Using UniPlayer
 
@@ -173,8 +58,7 @@ This section will show how to basically play media step by step
 
 ## Put the player's view (UniView) in xml
 
-```xml=
-...
+```xml
 <FrameLayout
     android:id="@+id/player_view_root"
     android:layout_width="match_parent"
@@ -183,21 +67,20 @@ This section will show how to basically play media step by step
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <com.kkstream.playcraft.paas.player.mobile.UniView
-        android:id="@+id/kks_player_service_view"
+    <com.blendvision.player.playback.player.mobile.UniView
+        android:id="@+id/playerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
 </FrameLayout>
-...
 ```
 
 ## Setup the type of control panel
 
-```kotlin=
-binding.kksPlayerServiceView.setupControlPanel(
-    autoKeepScreenOnEnabled = SampleApp.appSetting.autoKeepScreenOn,
-    defaultContentType = ContentType.EMBEDDED
+```kotlin
+binding.playerView.setupControlPanel(
+    autoKeepScreenOnEnabled = true,
+    defaultPanelType = PanelType.EMBEDDED
 )
 ```
 
@@ -216,13 +99,13 @@ player = UniPlayer.Builder(
   )
 ).build()
 
-binding.kksPlayerServiceView.setUnifiedPlayer(player)
+binding.playerView.setUnifiedPlayer(player)
 ```
 
 - You can also set the license in the AndroidManifest.xml by using `UNI_PLAYER_LICENSE_KEY` keyword.
   The order UniPlayer adopts is first check `PlayerConfig` and then check `meta-data`.
 
-```xml=
+```xml
 <meta-data
     android:name="UNI_PLAYER_LICENSE_KEY"
     android:value="YOUR_LICENSE_KEY" />
@@ -232,7 +115,7 @@ binding.kksPlayerServiceView.setUnifiedPlayer(player)
 
 ## [Optional] Configure player optional setting
 
-```kotlin=
+```kotlin
 player?.setPlayerOptions(
     PlayerOptions(
         isThumbnailSeekingEnabled = true
@@ -242,7 +125,7 @@ player?.setPlayerOptions(
 
 ## Prepare media content
 
-```kotlin=
+```kotlin
 val mediaConfig = MediaConfig(
     source = listOf(
         MediaConfig.Source(
@@ -262,14 +145,14 @@ val mediaConfig = MediaConfig(
 
 ## Set default dialog for error handling
 
-```kotlin=
-val defaultDialogEventListener = DefaultDialogEventListener(requireActivity(), binding.kksPlayerServiceView)
-binding.kksPlayerServiceView.setDialogEventListener(defaultDialogEventListener)
+```kotlin
+val defaultDialogEventListener = DefaultDialogEventListener(requireActivity(), binding.playerView)
+binding.playerView.setDialogEventListener(defaultDialogEventListener)
 ```
 
 ## Basic playback interface
 
-```kotlin=
+```kotlin
 // play
 player?.load(mediaConfig)
 player?.start()
@@ -284,19 +167,19 @@ player?.release()
 - PS: UniView also provides a default player lifecycle, which can be called to easily map to the
   lifecycle of activity/fragment.
 
-```kotlin=
-binding.kksPlayerServiceView.onResume()
-binding.kksPlayerServiceView.onStart()
-binding.kksPlayerServiceView.onPause()
-binding.kksPlayerServiceView.onStop()
-binding.kksPlayerServiceView.onDestroy()
+```kotlin
+binding.playerView.onResume()
+binding.playerView.onStart()
+binding.playerView.onPause()
+binding.playerView.onStop()
+binding.playerView.onDestroy()
 ```
 
 ## Log/Error/player state listener
 
 #### Log
 
-```kotlin=
+```kotlin
 PlayerConfig(
     ...,
     playLogger = object : PlayLogger {
@@ -309,7 +192,7 @@ PlayerConfig(
 
 #### Error event
 
-```kotlin=
+```kotlin
 player?.addErrorEventListener(object : ErrorEventCallback {
     override fun onUniError(errorEvent: UniErrorEvent): Boolean {
         // do something
@@ -320,7 +203,7 @@ player?.addErrorEventListener(object : ErrorEventCallback {
 
 #### Player state
 
-```kotlin=
+```kotlin
 player?.addStateEventListener(object : StateEventListener {
     override suspend fun onContentChanged(content: Content): UniErrorEvent? {
         // do something
@@ -349,9 +232,9 @@ player?.addStateEventListener(object : StateEventListener {
 
 1. setup pinp handler within player view. (This feature is only supported on Android 8.0+)
 
-```kotlin=
+```kotlin
 val handler = DefaultPictureInPictureHandler(requireActivity())
-binding.uniView.setPictureInPictureHandler(
+binding.playerView.setPictureInPictureHandler(
     handler
 )
 ```
@@ -359,13 +242,13 @@ binding.uniView.setPictureInPictureHandler(
 2. call entering method to enable the PinP, you can call it in lifecycle event, onClick event,
    guesture handle...etc.
 
-```kotlin=
-binding.kksPlayerServiceView.enterPictureInPicture()
+```kotlin
+binding.playerView.enterPictureInPicture()
 ```
 
 3. override the `onPictureInPictureModeChanged` method
 
-```kotlin=
+```kotlin
 override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
     super.onPictureInPictureModeChanged(isInPictureInPictureMode)
 
@@ -377,7 +260,7 @@ override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
     }
 
     // To reset the `isInPictureInPictureMode` parameter in `DefaultPictureInPictureHandler`, the following method needs to be called.
-    binding.kksPlayerServiceView.onPictureInPictureModeChanged(isInPictureInPictureMode)
+    binding.playerView.onPictureInPictureModeChanged(isInPictureInPictureMode)
 }
 ```
 
@@ -391,7 +274,7 @@ override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
 - To ensure a single activity is used for video playback requests and switched into or out of PiP
   mode as needed, set the activity's android:launchMode to singleTask in your manifest.
 
-```xml=
+```xml
 <activity
     android:name=".xxxx.xxxx"
     android:supportsPictureInPicture="true"

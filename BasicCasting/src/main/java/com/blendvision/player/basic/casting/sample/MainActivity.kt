@@ -7,15 +7,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.casting.sample.cast_button.DefaultCastButton
 import com.blendvision.player.basic.casting.sample.cast_button.ManualCastButton
 import com.blendvision.player.basic.casting.sample.databinding.ActivityMainBinding
+import com.blendvision.player.playback.cast.player.CaaS
+import com.blendvision.player.playback.cast.player.data.CastImage
+import com.blendvision.player.playback.cast.player.data.CastMetaData
+import com.blendvision.player.playback.cast.player.data.CastOptions
+import com.blendvision.player.playback.cast.player.listener.CastEventListener
+import com.blendvision.player.playback.player.common.PanelType
+import com.blendvision.player.playback.player.common.data.MediaConfig
 import com.google.android.gms.cast.CastDevice
 import com.google.android.gms.cast.MediaQueueItem
-import com.kkstream.playcraft.caas.player.CaaS
-import com.kkstream.playcraft.caas.player.data.CastImage
-import com.kkstream.playcraft.caas.player.data.CastMetaData
-import com.kkstream.playcraft.caas.player.data.CastOptions
-import com.kkstream.playcraft.caas.player.listener.CastEventListener
-import com.kkstream.playcraft.paas.player.common.ContentType
-import com.kkstream.playcraft.paas.player.common.data.MediaConfig
 
 class MainActivity : AppCompatActivity() {
 
@@ -89,13 +89,13 @@ class MainActivity : AppCompatActivity() {
         castButton = createCastButton(CreateCastButtonType.MANUAL)
 
         // Setup the type of control panel
-        viewBinding.kksPlayerServiceView.setupControlPanel(
+        viewBinding.playerView.setupControlPanel(
             autoKeepScreenOnEnabled = true,
-            defaultContentType = ContentType.EMBEDDED
+            defaultPanelType = PanelType.EMBEDDED
         )
 
 
-        viewBinding.kksPlayerServiceView.setUnifiedPlayer(mainViewModel.getPlayer())
+        viewBinding.playerView.setUnifiedPlayer(mainViewModel.getPlayer())
 
     }
 
