@@ -1,7 +1,6 @@
 ## Integration Guide
 
-This guide shows how to send player logs to the player's default analysis service by setting the
-AnalyticsConfig when creating the player.
+This guide details how to integrate the UniPlayer into your application. UniPlayer provides convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
 
 # Prerequisites
 
