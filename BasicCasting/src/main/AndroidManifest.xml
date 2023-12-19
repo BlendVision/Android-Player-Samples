@@ -16,10 +16,6 @@
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
             android:value="com.kkstream.basiccasting.sample.CastOptionsProvider" />
 
-        <meta-data
-            android:name="UNI_PLAYER_LICENSE_KEY"
-            android:value="${YOUR_OWN_LICENSE_KEY}" />
-
         <activity
             android:name="com.blendvision.player.basic.casting.sample.MainActivity"
             android:exported="true">

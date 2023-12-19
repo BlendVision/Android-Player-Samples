@@ -13,7 +13,7 @@ class MainViewModel : ViewModel() {
     private val mediaConfig = MediaConfig(
         source = listOf(
             MediaConfig.Source(
-                url = "MPD_URL",
+                url = MPD_URL,
                 protocol = MediaConfig.Protocol.DASH
             )
         ),
@@ -32,6 +32,7 @@ class MainViewModel : ViewModel() {
         player = UniPlayer.Builder(
             context = context,
             playerConfig = PlayerConfig(
+                license = PLAYER_LICENSE,
                 playLogger = object : PlayLogger {
                     override fun logEvent(eventName: String, properties: Map<String, Any>) {
 
@@ -76,4 +77,11 @@ class MainViewModel : ViewModel() {
     fun getPlayer(): UniPlayer {
         return player
     }
+
+    companion object {
+        private const val PLAYER_LICENSE = "{YOUR_PLAYER_LICENSE}"
+
+        private const val MPD_URL = "https://d2mxta927rohme.cloudfront.net/376c618f-b27a-4a3d-9457-ad7076ee87e3/vod/dea931c3-8766-477d-a87b-1c3f91490139/vod/dash.mpd"
+    }
+
 }

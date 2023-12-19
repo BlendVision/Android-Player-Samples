@@ -27,10 +27,6 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="UNI_PLAYER_LICENSE_KEY"
-            android:value="${YOUR_OWN_LICENSE_KEY}" />
     </application>
 
 </manifest>
