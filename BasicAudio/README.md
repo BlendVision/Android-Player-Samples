@@ -1,6 +1,6 @@
 ## Integration Guide
 
-This guide details how to integrate the UniPlayer into your application. UniPlayer provides convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
+This guide details how to integrate the BlendVision Player SDK into your application. Our player provides convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
 
 # Prerequisites
 
