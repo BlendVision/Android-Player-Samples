@@ -36,8 +36,8 @@ BlendVision Player license key is obtained by logging into BlendVision CMS (http
     ```
 
 > **Note**:
->     1. The order player adopts is first check PlayerConfig and then check meta-data.
->     2. If the license key is not correctly set, you will encounter a 20403 error.
+>   1. The order player adopts is first check PlayerConfig and then check meta-data.
+>   2. If the license key is not correctly set, you will encounter a 20403 error.
 
 ## Available Sample Apps
 
