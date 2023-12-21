@@ -81,7 +81,8 @@ class MainViewModel : ViewModel() {
     companion object {
         private const val PLAYER_LICENSE = "{YOUR_PLAYER_LICENSE}"
 
-        private const val MPD_URL = "https://d2mxta927rohme.cloudfront.net/376c618f-b27a-4a3d-9457-ad7076ee87e3/vod/dea931c3-8766-477d-a87b-1c3f91490139/vod/dash.mpd"
+        // Sample MPD_URL: https://d2mxta927rohme.cloudfront.net/376c618f-b27a-4a3d-9457-ad7076ee87e3/vod/dea931c3-8766-477d-a87b-1c3f91490139/vod/dash.mpd
+        private const val MPD_URL = "{YOUR_MPD_URL}"
     }
 
 }
