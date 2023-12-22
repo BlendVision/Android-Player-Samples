@@ -63,6 +63,12 @@ dependencies {
     //koin
     implementation Libs.koin
 
+    //kotlinx serialization
+    implementation Libs.kotlinx_serialization
+
+    //proto datastore
+    implementation Libs.proto_datastore
+
     //KKSPlayer dependency
     api(Libs.guava) {
         // Exclude dependencies that are only used by Guava at compile time

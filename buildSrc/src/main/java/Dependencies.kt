@@ -26,9 +26,17 @@ private object LibsVersions {
     const val rxjavaVersion = "2.2.9"
     const val rxandroidVersion = "2.1.0"
     const val leanbackVersion = "1.0.0"
+    const val protoDatastoreVersion ="1.0.0"
+    const val kotlinxSerializationVersion="1.5.1"
 }
 
 object Libs {
+
+    //datastore
+    const val proto_datastore ="androidx.datastore:datastore:${LibsVersions.protoDatastoreVersion}"
+
+    //kotlinx-serialization
+    const val kotlinx_serialization="org.jetbrains.kotlinx:kotlinx-serialization-json:${LibsVersions.kotlinxSerializationVersion}"
 
     const val guava = "com.google.guava:guava:${LibsVersions.guavaVersion}"
 
