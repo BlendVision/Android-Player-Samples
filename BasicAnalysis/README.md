@@ -46,6 +46,12 @@ including a simplified approach using `implementation fileTree`.
     //koin
     implementation "io.insert-koin:koin-android:3.4.3"
 
+    //kotlinx serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+
+    //proto datastore
+    implementation "androidx.datastore:datastore:1.0.0"
+
 ```
 
 > **Note**: After making changes, don't forget to sync your Gradle files to ensure that the project

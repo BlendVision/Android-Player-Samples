@@ -8,20 +8,17 @@ convenient APIs for DRM, media controllers, and a generic UI that can be customi
 - com.google.guava:guava
 - com.google.android.gms:play-services-cast-framework
 - org.jetbrains.kotlinx:kotlinx-coroutines-android
+- retrofit2
+  - com.squareup.retrofit2:retrofit
+  - com.squareup.retrofit2:converter-gson
 - okhttp
   - com.squareup.okhttp3:okhttp
   - com.squareup.okhttp3:logging-interceptor
 - com.google.code.gson:gson
-- Glide
-  - com.github.bumptech.glide:glide
+- com.github.bumptech.glide:glide
 - io.insert-koin:koin-android
-
-### Gradle.properties
-
-```
-android.enableDexingArtifactTransform.desugaring=false
-android.enableJetifier=true
-```
+- org.jetbrains.kotlinx:kotlinx-serialization-json
+- androidx.datastore:datastore
 
 ## Get started
 
@@ -60,22 +57,17 @@ Add following `.aar` files to `libs/`.
 kks-playback.aar
 kks-download.aar
 kks-analytics.aar
+kks-common.aar
 ```
 
 ```groovy
 // KKSPlayer
 kksplayer.aar
-kksplayer-kkdrm.aar
 kksplayer-library-core-release.aar
 kksplayer-library-common-release.aar
 kksplayer-library-extractor-release.aar
 kksplayer-library-dash-release.aar
 kksplayer-library-ui-release.aar
-```
-
-```groovy
-// KKS-analytics
-kks-analytics.aar
 ```
 
 ```groovy
@@ -90,7 +82,7 @@ kks-network.aar
 ```groovy
 // UniPlayer
 maven {
-    url "https://kks-devops-assets.s3-ap-northeast-1.amazonaws.com/kks-trc/android/libs"
+    url "https://kks-devops-assets.s3-ap-northeast-1.amazonaws.com/kks-cpt/android/libs"
 }
 ```
 
@@ -104,13 +96,8 @@ maven {
 - Setting for gradle file
 
 ```groovy
-// UniPlayer
-implementation "com.blendvision.player:kks-download:" + version
-implementation "com.blendvision.player:kks-playback:" + version
-implementation "com.blendvision.player:kks-analytics:" + version
 
 // KKSPlayer
-implementation "com.kkstream.android.ottfs.player:kksplayer-kkdrm:" + kksplayer_version
 implementation "com.kkstream.android.ottfs.player:kksplayer-library-core:" + kksplayer_version
 implementation "com.kkstream.android.ottfs.player:kksplayer-library-dash:" + kksplayer_version
 implementation "com.kkstream.android.ottfs.player:kksplayer-library-ui:" + kksplayer_version
@@ -154,11 +141,17 @@ implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 //gson
 implementation 'com.google.code.gson:gson:' + gsonVersion
 
-//thumbnail
+//glide
 implementation "com.github.bumptech.glide:glide:$glideVersion"
 
 //koin
 implementation "io.insert-koin:koin-android:$koinVersion"
+
+//kotlinx serialization
+implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion"
+
+//proto datastore
+implementation "androidx.datastore:datastore:$datastoreVersion"
 ```
 
 # Using UniPlayer
