@@ -61,6 +61,12 @@ dependencies {
     //koin
     implementation Libs.koin
 
+    //kotlinx serialization
+    implementation Libs.kotlinx_serialization
+
+    //proto datastore
+    implementation Libs.proto_datastore
+
     //KKSPlayer dependency
     api(Libs.guava) {
         // Exclude dependencies that are only used by Guava at compile time
@@ -71,13 +77,6 @@ dependencies {
         exclude group: 'com.google.j2objc', module: 'j2objc-annotations'
         exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
     }
-
-    //Rxkotlin
-    implementation Libs.rxkotlin
-    //Rxjava
-    implementation Libs.rxjava
-    //Rxandroid
-    implementation Libs.rxandroid
 
     //leanback
     implementation Libs.leanback

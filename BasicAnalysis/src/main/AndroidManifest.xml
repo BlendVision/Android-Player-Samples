@@ -11,10 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniPlayerSample">
 
-        <meta-data
-            android:name="UNI_PLAYER_LICENSE_KEY"
-            android:value="${YOUR_OWN_LICENSE_KEY}" />
-
         <activity
             android:name="com.blendvision.player.basic.analysis.sample.MainActivity"
             android:exported="true">

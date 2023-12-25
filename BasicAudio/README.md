@@ -1,6 +1,6 @@
 ## Integration Guide
 
-This guide details how to integrate the UniPlayer into your application. UniPlayer provides convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
+This guide details how to integrate the BlendVision Player SDK into your application. Our player provides convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
 
 # Prerequisites
 
@@ -44,6 +44,12 @@ including a simplified approach using `implementation fileTree`.
 
     //koin
     implementation "io.insert-koin:koin-android:3.4.3"
+
+    //kotlinx serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+
+    //proto datastore
+    implementation "androidx.datastore:datastore:1.0.0"
 
 ```
 

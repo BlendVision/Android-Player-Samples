@@ -1,14 +1,43 @@
-# Integration Guide for Developers
+# BlendVision Player Android Samples
 
-Welcome to the Android-Player-SDK Integration Guide. This guide is designed to provide a
-comprehensive overview of the necessary steps for integrating the Android-Player-SDK into your
-Android applications.
+This repository contains sample apps using the BlendVision Player Android SDK.
 
 ## Requirements
 
 - **IDE**: Android Studio 4.0 or later
 - **minSdkVersion**: 21
 - **targetSdkVersion**: 33
+
+## Sample App Setup Instructions
+
+### Player license
+BlendVision Player license key is obtained by logging into BlendVision CMS (https://app.one.blendvision.com/en/dashboard) and navigating to `VOD -> select one of content -> share icon -> Player SDK -> License Key` to find the license.
+
+#### The license key can be add by following two ways:
+1. Dynamically coding (license lifecycle scope only for current player instance)
+    ```kotlin
+    private var player: UniPlayer? = null
+    
+    player = UniPlayer.Builder(
+        requireContext(),
+        PlayerConfig(
+            license = "{YOUR_PLAYER_LICENSE}"
+        )
+    ).build()
+    
+    binding.kksPlayerServiceView.setUnifiedPlayer(player)
+    ```
+2. Application manifest (license lifecycle scope for all players in your application)
+    ```xml
+    <meta-data 
+        android:name="UNI_PLAYER_LICENSE_KEY" 
+        android:value="{YOUR_PLAYER_LICENSE}"
+    />
+    ```
+
+> **Note**:
+>   1. The order player adopts is first check PlayerConfig and then check meta-data.
+>   2. If the license key is not correctly set, you will encounter a 20403 error.
 
 ## Available Sample Apps
 
@@ -25,11 +54,12 @@ Illustrates the setup for basic playback of DASH streams using UniPlayer.
 [**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicTVPlayback):
 Illustrates the setup for basic TV playback of DASH streams using UniPlayer.  
 [**BasicAudio**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicAudio):
-Illustrates the setup for basic audio of DASH streams using UniPlayer.  
+Illustrates the setup for basic audio of DASH streams using UniPlayer.
+
 ### Advanced
 
 [**AdvancedPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/AdvancedPlayback): Illustrates
-the setup for playback of DASH streams with DRM support 、 enable Thumbnail Seeking 、UI Customization
-using UniPlayer. 
+the setup for playback of DASH streams with DRM support, enable Thumbnail Seeking, UI Customization
+using UniPlayer.
 
 
