@@ -2,7 +2,7 @@ package com.blendvision.player.basic.analysis.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.blendvision.player.analytics.presentation.kksplayer_collector.AnalyticsConfig
+import com.blendvision.player.analytics.presentation.main.AnalyticsConfig
 import com.blendvision.player.playback.player.common.PlayerConfig
 import com.blendvision.player.playback.player.common.UniPlayer
 import com.blendvision.player.playback.player.common.callback.PlayLogger

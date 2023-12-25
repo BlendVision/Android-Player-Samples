@@ -22,13 +22,18 @@ private object LibsVersions {
     const val espressoCoreVersion = "3.5.1"
     const val activityVersion = "1.6.1"
     const val guavaVersion = "27.1-android"
-    const val rxkotlinVersion = "2.3.0"
-    const val rxjavaVersion = "2.2.9"
-    const val rxandroidVersion = "2.1.0"
     const val leanbackVersion = "1.0.0"
+    const val protoDatastoreVersion ="1.0.0"
+    const val kotlinxSerializationVersion="1.5.1"
 }
 
 object Libs {
+
+    //datastore
+    const val proto_datastore ="androidx.datastore:datastore:${LibsVersions.protoDatastoreVersion}"
+
+    //kotlinx-serialization
+    const val kotlinx_serialization="org.jetbrains.kotlinx:kotlinx-serialization-json:${LibsVersions.kotlinxSerializationVersion}"
 
     const val guava = "com.google.guava:guava:${LibsVersions.guavaVersion}"
 
@@ -74,14 +79,6 @@ object Libs {
     const val okhttp_logging_interceptor =
         "com.squareup.okhttp3:logging-interceptor:${LibsVersions.okhttpLoggingInterceptor}"
 
-    //Rxkotlin
-    const val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${LibsVersions.rxkotlinVersion}"
-
-    //Rxjava
-    const val rxjava = "io.reactivex.rxjava2:rxjava:${LibsVersions.rxjavaVersion}"
-
-    //Rxandroid
-    const val rxandroid = "io.reactivex.rxjava2:rxandroid:${LibsVersions.rxandroidVersion}"
     //leanback
     const val leanback = "androidx.leanback:leanback:${LibsVersions.leanbackVersion}"
 
