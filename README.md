@@ -9,7 +9,7 @@ Our player provides convenient APIs for DRM, media controllers, and a generic UI
 - **IDE**: Android Studio 3.0 or later
 - **minSdkVersion**: 21
 - **targetSdkVersion**: 33
-- **Kotlin Version**:1.7.x or later
+- **Kotlin Version**: 1.7.x or later
 
 ## Importing AAR into Project
 
@@ -51,7 +51,7 @@ Upon visiting the link, you will find the following AAR files available for down
    This will include all `.jar` and `.aar` files that are in the `libs` directory into your project.
 
 
-## Add the dependencies for to your app-level Gradle file
+## Add the dependencies to your app-level Gradle file
 ```groovy
 
     //coroutines
