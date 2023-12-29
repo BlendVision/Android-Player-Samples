@@ -68,7 +68,7 @@ dependencies {
     implementation Libs.proto_datastore
 
     //KKSPlayer dependency
-    api(Libs.guava) {
+    implementation(Libs.guava) {
         // Exclude dependencies that are only used by Guava at compile time
         // (but declared as runtime deps) [internal b/168188131].
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
