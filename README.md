@@ -143,7 +143,9 @@ Illustrates the setup for basic playback of DASH streams using UniPlayer.
 [**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicTVPlayback):
 Illustrates the setup for basic TV playback of DASH streams using UniPlayer.  
 [**BasicAudio**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicAudio):
-Illustrates the setup for basic audio of DASH streams using UniPlayer.
+Illustrates the setup for basic audio of DASH streams using UniPlayer.  
+[**BasicDownload**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicDownload):
+Illustrates the setup for basic download and offline playback using UniPlayer.
 
 ### Advanced
 
