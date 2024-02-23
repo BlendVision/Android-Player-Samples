@@ -9,7 +9,7 @@ Our player provides convenient APIs for DRM, media controllers, and a generic UI
 - **IDE**: Android Studio 3.0 or later
 - **minSdkVersion**: 21
 - **targetSdkVersion**: 33
-- **Kotlin Version**: 1.7.x or later
+- **Kotlin Version**: 1.9.x or later
 
 ## Importing AAR into Project
 

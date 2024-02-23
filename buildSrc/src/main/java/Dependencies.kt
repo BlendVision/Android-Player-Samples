@@ -14,7 +14,7 @@ private object LibsVersions {
     const val gsonVersion = "2.10.1"
     const val okhttpLoggingInterceptor = "4.9.0"
     const val glideVersion = "4.15.1"
-    const val coreKtxVersion = "1.7.0"
+    const val coreKtxVersion = "1.9.0"
     const val appcompatVersion = "1.6.1"
     const val materialVersion = "1.9.0"
     const val junitVersion = "4.13.2"
