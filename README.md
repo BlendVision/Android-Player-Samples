@@ -20,21 +20,18 @@ Access the latest releases at: [BlendVision Android Player SDK Releases](https:/
 Upon visiting the link, you will find the following AAR files available for download:
 
 #### BlendVision Player Core SDK
-- `kks-playback.aar`
-- `kks-download.aar`
-- `kks-analytics.aar`
-- `kks-common.aar`
+- `bv-playback.aar`
+- `bv-download.aar`
+- `bv-analytics.aar`
+- `bv-common.aar`
 
-#### KKSPlayer
-- `kksplayer.aar`
-- `kksplayer-library-core-release.aar`
-- `kksplayer-library-common-release.aar`
-- `kksplayer-library-extractor-release.aar`
-- `kksplayer-library-dash-release.aar`
-- `kksplayer-library-ui-release.aar`
-
-#### KKS-Network
-- `kks-network.aar`
+#### BVPlayer
+- `bv-adapter.aar`
+- `bv-library-core-release.aar`
+- `bv-library-common-release.aar`
+- `bv-library-extractor-release.aar`
+- `bv-library-dash-release.aar`
+- `bv-library-ui-release.aar`
 
 ### Manual Import with `fileTree`
 
