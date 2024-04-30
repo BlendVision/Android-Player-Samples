@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
         // Setup the type of control panel
         binding.playerView.setupControlPanel(
             autoKeepScreenOnEnabled = true,
-            defaultPanelType = PanelType.EMBEDDED
+            defaultPanelType = PanelType.EMBEDDED,
+            disableControlPanel = null
         )
 
         binding.playerView.enablePlaybackControlsAuto(false)

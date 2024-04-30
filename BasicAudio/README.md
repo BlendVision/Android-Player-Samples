@@ -29,7 +29,7 @@ private fun initializePlayer() {
     })
     val player = UniPlayer.Builder(context = context, playerConfig = playerConfig).build()
     
-    binding.playerView.setupControlPanel(autoKeepScreenOnEnabled = true, defaultPanelType = PanelType.EMBEDDED)
+    binding.playerView.setupControlPanel(autoKeepScreenOnEnabled = true, defaultPanelType = PanelType.EMBEDDED, disableControlPanel = null)
     binding.playerView.setUnifiedPlayer(player)
 }
 ```

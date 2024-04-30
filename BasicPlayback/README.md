@@ -33,7 +33,8 @@ This section will show how to basically play media step by step
 ```kotlin
 binding.playerView.setupControlPanel(
     autoKeepScreenOnEnabled = true,
-    defaultPanelType = PanelType.EMBEDDED
+    defaultPanelType = PanelType.EMBEDDED,
+    disableControlPanel = null
 )
 ```
 

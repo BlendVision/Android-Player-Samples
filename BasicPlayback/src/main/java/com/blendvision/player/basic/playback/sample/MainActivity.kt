@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         // Setup the type of control panel
         viewBinding.playerView.setupControlPanel(
             autoKeepScreenOnEnabled = true,
-            defaultPanelType = PanelType.EMBEDDED
+            defaultPanelType = PanelType.EMBEDDED,
+            disableControlPanel = null
         )
 
         // Hide useless options
