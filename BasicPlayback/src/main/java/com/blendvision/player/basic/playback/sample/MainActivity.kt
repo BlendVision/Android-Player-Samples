@@ -5,8 +5,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.playback.sample.databinding.ActivityMainBinding
-import com.blendvision.player.playback.player.common.PanelType
-import com.blendvision.player.playback.player.common.data.SettingOptionConfig
+import com.blendvision.player.playback.presentation.entity.PanelType
+import com.blendvision.player.playback.presentation.entity.SettingOptionConfig
 
 class MainActivity : AppCompatActivity() {
 

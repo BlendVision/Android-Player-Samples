@@ -22,7 +22,7 @@ This section will show how to basically play media step by step
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <com.blendvision.player.playback.player.mobile.UniView
+    <com.blendvision.player.playback.presentation.UniView
         android:id="@+id/playerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

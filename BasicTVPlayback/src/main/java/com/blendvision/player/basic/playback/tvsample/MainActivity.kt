@@ -5,10 +5,10 @@ import android.view.KeyEvent
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.playback.tvsample.databinding.ActivityMainBinding
-import com.blendvision.player.playback.player.common.callback.ControlStateEventListener
-import com.blendvision.player.playback.player.stb.CustomUniTVFragmentInterface
-import com.blendvision.player.playback.player.stb.StateType
-import com.blendvision.player.playback.player.stb.UniTvFragment
+import com.blendvision.player.playback.presentation.UniTvFragment
+import com.blendvision.player.playback.presentation.delegate.internal.ControlStateEventListener
+import com.blendvision.player.playback.presentation.stb.CustomUniTVFragmentInterface
+import com.blendvision.player.playback.presentation.stb.StateType
 
 class MainActivity : FragmentActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,7 +33,7 @@ class MainActivity : FragmentActivity() {
     private fun setupUniTvFragment() {
         val player = viewModel.setupPlayer(this)
         uniTvFragment.setup(player)
-        uniTvFragment.setPaasThemeColorStyle(R.style.UpdateCustomizeIconColor)
+        uniTvFragment.setPlayerThemeColorStyle(R.style.UpdateCustomizeIconColor)
         uniTvFragment.setControlStateEventListener(object : ControlStateEventListener {
             override fun onControlStateChanged(newState: StateType) {
 

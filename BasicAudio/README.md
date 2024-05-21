@@ -10,7 +10,7 @@ To implement audio capabilities in your app, please follow the steps outlined in
 
 ### Step1: Set player layout
 ```xml
-<com.blendvision.player.playback.player.mobile.UniView
+<com.blendvision.player.playback.presentation.UniView
     android:id="@+id/playerView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
