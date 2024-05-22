@@ -1,4 +1,4 @@
-package com.blendvision.basic.download
+package com.blendvision.player.basic.download.sample
 
 import android.Manifest
 import android.os.Build
@@ -8,12 +8,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.blendvision.basic.download.databinding.ActivityMainBinding
-import com.blendvision.basic.download.factory.MainViewModelFactory
-import com.blendvision.player.playback.player.common.PanelType
-import com.blendvision.player.playback.player.common.data.SettingOptionConfig
-import com.blendvision.player.playback.player.mobile.DefaultDialogEventListener
-import com.blendvision.player.playback.player.mobile.DefaultMenuFactory
+import com.blendvision.player.basic.download.sample.databinding.ActivityMainBinding
+import com.blendvision.player.basic.download.sample.factory.MainViewModelFactory
+import com.blendvision.player.playback.presentation.callback.DefaultDialogEventListener
+import com.blendvision.player.playback.presentation.entity.PanelType
+import com.blendvision.player.playback.presentation.entity.SettingOptionConfig
+import com.blendvision.player.playback.presentation.menu.DefaultMenuFactory
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

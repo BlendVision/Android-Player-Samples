@@ -2,30 +2,27 @@ package com.blendvision.player.advanced.playback.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.blendvision.player.playback.player.common.PlayerConfig
-import com.blendvision.player.playback.player.common.UniPlayer
-import com.blendvision.player.playback.player.common.callback.PlayLogger
-import com.blendvision.player.playback.player.common.data.MediaConfig
-import com.blendvision.player.playback.player.common.data.PlayerOptions
+import com.blendvision.player.playback.presentation.UniPlayer
+import com.blendvision.player.playback.presentation.entity.MediaConfig
+import com.blendvision.player.playback.presentation.entity.PlayerConfig
+import com.blendvision.player.playback.presentation.entity.PlayerOptions
+import com.blendvision.player.playback.presentation.logger.PlayLogger
 
 class MainViewModel : ViewModel() {
 
     private lateinit var player: UniPlayer
 
     private val mediaConfig = MediaConfig(
-        source = listOf(
-            MediaConfig.Source(
+        source = MediaConfig.Source(
                 url = MPD_URL,
                 protocol = MediaConfig.Protocol.DASH,
-                //DRM info
                 drm = MediaConfig.DrmInfo.Widevine(
                     licenseUrl = DRM_LICENSE_URL,
                     headers = mapOf(
                         DRM_HEADER_KEY to DRM_HEADER_VALUE
                     )
                 )
-            )
-        ),
+            ),
         title = "CONTENT_TITLE",
         imageUrl = "COVER_IMAGE",
         //If you have set thumbnailSeekingUrl and the isThumbnailSeekingEnabled setting in the PlayerOptions object is set to true, the player will enable thumbnail seeking when the seek bar is changed.
