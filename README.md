@@ -13,25 +13,25 @@ All examples are provided in Kotlin :+1:
 
 ### Basics
 
-[**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback):
+[**BasicPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicPlayback):
 Illustrates the setup for basic playback of DASH streams using UniPlayer.  
-[**BasicAudio**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicAudio):
+[**BasicAudio**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicAudio):
 Illustrates the setup for basic audio of DASH streams using UniPlayer.  
-[**BasicAnalysis**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicAnalysis):
+[**BasicAnalysis**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicAnalysis):
 Demonstrates the configuration for sending analytics events for basic analysis.  
-[**BasicCasting**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicCasting):
+[**BasicCasting**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicCasting):
 Explains how to stream video and audio directly to a TV.  
-[**BasicDownload**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicDownload):
+[**BasicDownload**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicDownload):
 Illustrates the setup for basic download and offline playback using UniPlayer.  
-[**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicTVPlayback):
+[**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicTVPlayback):
 Illustrates the setup for basic TV playback of DASH streams using UniPlayer.  
 
 ### Advanced
 
-[**AdvancedPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/AdvancedPlayback): Illustrates
+[**AdvancedPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/AdvancedPlayback): Illustrates
 the setup for playback of DASH streams with DRM support, enable Thumbnail Seeking, UI Customization
 using UniPlayer.  
-[**ULLPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/ULLPlayback):
+[**ULLPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/ULLPlayback):
 Illustrates the setup for ultra-low latency playback of DASH streams using UniPlayer.  
 
 

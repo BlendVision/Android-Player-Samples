@@ -5,7 +5,7 @@ convenient APIs for DRM, media controllers, and a generic UI that can be customi
 
 # Prerequisites
 
-To implement advanced capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback) section.
+To implement advanced capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicPlayback) section.
 
 # Using player (UniPlayer)
 

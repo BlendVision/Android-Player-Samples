@@ -4,7 +4,7 @@ This guide details how to integrate the BlendVision Player SDK into your applica
 
 # Prerequisites
 
-To implement audio capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback) section.
+To implement audio capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/BasicPlayback) section.
 
 ## Basic Usage
 
