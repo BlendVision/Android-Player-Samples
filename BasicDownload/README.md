@@ -96,7 +96,7 @@ Downloader provides following functions to fulfil the needs of downloading
 
 ### Download Status
 Used to observe the download status in the list.
-```kotlin=
+```kotlin
 data class DownloadStatus(
     val mpdUrl: String,
     val state: DownloadState,

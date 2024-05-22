@@ -2,25 +2,23 @@ package com.blendvision.player.basic.audio.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.blendvision.player.playback.player.common.PlayerConfig
-import com.blendvision.player.playback.player.common.UniPlayer
-import com.blendvision.player.playback.player.common.callback.PlayLogger
-import com.blendvision.player.playback.player.common.data.MediaConfig
+import com.blendvision.player.playback.presentation.UniPlayer
+import com.blendvision.player.playback.presentation.entity.MediaConfig
+import com.blendvision.player.playback.presentation.entity.PlayerConfig
+import com.blendvision.player.playback.presentation.logger.PlayLogger
 
 class MainViewModel:ViewModel() {
 
     private lateinit var player: UniPlayer
 
     private val mediaConfig = MediaConfig(
-        source = listOf(
-            MediaConfig.Source(
+        source = MediaConfig.Source(
                 url = MPD_URL,
                 protocol = MediaConfig.Protocol.DASH,
                 drm = MediaConfig.DrmInfo.Widevine(
                     licenseUrl = "DRM_SERVER_URL",
                     headers = mapOf()
                 )
-            )
         ),
         title = "I'm playing audio",
         imageUrl = "COVER_IMAGE",

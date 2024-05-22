@@ -5,10 +5,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.audio.sample.databinding.ActivityMainBinding
-import com.blendvision.player.playback.player.common.PanelType
-import com.blendvision.player.playback.player.common.data.SettingOptionConfig
-import com.blendvision.player.playback.player.mobile.DefaultDialogEventListener
-import com.blendvision.player.playback.player.mobile.DefaultMenuFactory
+import com.blendvision.player.playback.presentation.callback.DefaultDialogEventListener
+import com.blendvision.player.playback.presentation.entity.PanelType
+import com.blendvision.player.playback.presentation.entity.SettingOptionConfig
+import com.blendvision.player.playback.presentation.menu.DefaultMenuFactory
+
 
 class MainActivity : AppCompatActivity() {
 

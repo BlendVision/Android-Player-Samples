@@ -5,7 +5,7 @@ convenient APIs for DRM, media controllers, and a generic UI that can be customi
 
 # Prerequisites
 
-To implement advanced capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.
+To implement advanced capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback) section.
 
 # Using player (UniPlayer)
 
@@ -22,7 +22,7 @@ This section will show how to basically play media step by step
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <com.blendvision.player.playback.player.mobile.UniView
+    <com.blendvision.player.playback.presentation.UniView
         android:id="@+id/playerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -69,16 +69,14 @@ player?.setPlayerOptions(
 
 ```kotlin
 val mediaConfig = MediaConfig(
-    source = listOf(
-        MediaConfig.Source(
+    source = MediaConfig.Source(
             url = MPD_URL,
             protocol = MediaConfig.Protocol.DASH,
             drm = MediaConfig.DrmInfo.Widevine(
                 licenseServiceUrl = DRM_LICENSE_URL,
                 header = mapOf(DRM_HEADER_KEY to DRM_HEADER_VALUE)
             )
-        )
-    ),
+        ),
     title = "CONTENT_TITLE",
     imageUrl = "COVER_IMAGE",
     thumbnailSeekingUrl = "VTT_FOR_THUMBNAIL_SEEK_URL"

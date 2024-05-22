@@ -2,21 +2,19 @@ package com.blendvision.player.basic.casting.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.blendvision.player.playback.player.common.PlayerConfig
-import com.blendvision.player.playback.player.common.UniPlayer
-import com.blendvision.player.playback.player.common.callback.PlayLogger
-import com.blendvision.player.playback.player.common.data.MediaConfig
+import com.blendvision.player.playback.presentation.UniPlayer
+import com.blendvision.player.playback.presentation.entity.MediaConfig
+import com.blendvision.player.playback.presentation.entity.PlayerConfig
+import com.blendvision.player.playback.presentation.logger.PlayLogger
 
 class MainViewModel : ViewModel() {
 
 
     private val mediaConfig = MediaConfig(
-        source = listOf(
-            MediaConfig.Source(
+        source = MediaConfig.Source(
                 url = MPD_URL,
                 protocol = MediaConfig.Protocol.DASH
-            )
-        ),
+            ),
         title = "CONTENT_TITLE",
         imageUrl = "COVER_IMAGE",
         thumbnailSeekingUrl = null,

@@ -1,16 +1,16 @@
-package com.blendvision.basic.download.factory
+package com.blendvision.player.basic.download.sample.factory
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.blendvision.basic.download.MainViewModel
+import com.blendvision.player.basic.download.sample.MainViewModel
 import com.blendvision.player.download.Downloader
 import com.blendvision.player.download.ui.entity.DownloadTrackSelection
 import com.blendvision.player.download.ui.entity.DownloadableTracks
-import com.blendvision.player.playback.player.common.PlayerConfig
-import com.blendvision.player.playback.player.common.UniPlayer
-import com.blendvision.player.playback.player.common.callback.PlayLogger
+import com.blendvision.player.playback.presentation.UniPlayer
+import com.blendvision.player.playback.presentation.entity.PlayerConfig
+import com.blendvision.player.playback.presentation.logger.PlayLogger
 
 @Suppress("UNCHECKED_CAST")
 class MainViewModelFactory(

@@ -4,13 +4,13 @@ This guide details how to integrate the BlendVision Player SDK into your applica
 
 # Prerequisites
 
-To implement audio capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.
+To implement audio capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback) section.
 
 ## Basic Usage
 
 ### Step1: Set player layout
 ```xml
-<com.blendvision.player.playback.player.mobile.UniView
+<com.blendvision.player.playback.presentation.UniView
     android:id="@+id/playerView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -49,12 +49,10 @@ player.setPoster(null)
 ```kotlin
 // Media Configuration
 val mediaConfig = MediaConfig(
-     source = listOf(
-            MediaConfig.Source(
+     source = MediaConfig.Source(
                 url = "MPD_URL",
                 protocol = MediaConfig.Protocol.DASH
-            )
-        ),
+            ),
         title = "TITLE",
         imageUrl = "COVER_IMAGE",
         thumbnailSeekingUrl = null,

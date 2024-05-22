@@ -19,7 +19,7 @@ This section will show how to basically play media step by step
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <com.blendvision.player.playback.player.mobile.UniView
+    <com.blendvision.player.playback.presentation.UniView
         android:id="@+id/playerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -67,16 +67,14 @@ player?.setPlayerOptions(
 
 ```kotlin
 val mediaConfig = MediaConfig(
-    source = listOf(
-        MediaConfig.Source(
+    source = MediaConfig.Source(
             url = "DASH_URL",
             protocol = MediaConfig.Protocol.DASH,
             drm = MediaConfig.DrmInfo.Widevine(
                 licenseServiceUrl = "LICENSE_SERVER_URL",
                 header = mapOf("KEY" to "VALUE")
             )
-        )
-    ),
+        ),
     title = "CONTENT_TITLE",
     imageUrl = "COVER_IMAGE",
     thumbnailSeekingUrl = "VTT_FOR_THUMBNAIL_SEEK_URL"

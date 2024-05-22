@@ -6,7 +6,7 @@ event listener, allowing you to complete this feature conveniently.
 
 # Prerequisites
 
-To implement CaaS (Cast as a Service) in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.  
+To implement CaaS (Cast as a Service) in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback) section.  
 
 # Basic Usage
 1. Create a CastOptionProvider class
@@ -127,7 +127,7 @@ Add `CaaSMiniController` fragment in your layout.
    android:layout_height="wrap_content"
    android:layout_alignParentBottom="true"
    android:visibility="gone"
-   class="com.kkstream.playcraft.caas.player.CaaSMiniController"
+   class="com.blendvision.player.playback.cast.presentation.CaaSMiniController"
    app:layout_constraintEnd_toEndOf="parent"
    app:layout_constraintBottom_toBottomOf="parent" />
 ```
