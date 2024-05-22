@@ -4,7 +4,7 @@ This repository contains sample apps using the BlendVision Player Android SDK.
 This guide details how to integrate the BlendVision Player SDK into your application.  
 Our player provides convenient APIs for DRM, media controllers, and a generic UI that can be customized as needed.
 
-## How to install BlendVision Player SDK:
+## How to install BlendVision Player SDK
 [**Android-Player-SDK**](https://github.com/BlendVision/Android-Player-SDK)
 
 ## Sample App Setup Instructions
