@@ -13,19 +13,18 @@ All examples are provided in Kotlin :+1:
 
 ### Basics
 
+[**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback):
+Illustrates the setup for basic playback of DASH streams using UniPlayer.  
+[**BasicAudio**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicAudio):
+Illustrates the setup for basic audio of DASH streams using UniPlayer.  
 [**BasicAnalysis**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicAnalysis):
 Demonstrates the configuration for sending analytics events for basic analysis.  
 [**BasicCasting**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicCasting):
 Explains how to stream video and audio directly to a TV.  
-[**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback):
-Illustrates the setup for basic playback of DASH streams using UniPlayer.  
-[**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicTVPlayback):
-Illustrates the setup for basic TV playback of DASH streams using UniPlayer.  
-[**BasicAudio**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicAudio):
-Illustrates the setup for basic audio of DASH streams using UniPlayer.  
 [**BasicDownload**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicDownload):
 Illustrates the setup for basic download and offline playback using UniPlayer.  
-
+[**BasicTVPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicTVPlayback):
+Illustrates the setup for basic TV playback of DASH streams using UniPlayer.  
 
 ### Advanced
 
