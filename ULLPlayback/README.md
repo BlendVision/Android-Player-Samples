@@ -66,16 +66,14 @@ player?.setPlayerOptions(
 
 ```kotlin
 val mediaConfig = MediaConfig(
-    source = listOf(
-        MediaConfig.Source(
+    source = MediaConfig.Source(
             url = "DASH_URL",
             protocol = MediaConfig.Protocol.DASH,
             drm = MediaConfig.DrmInfo.Widevine(
                 licenseServiceUrl = "LICENSE_SERVER_URL",
                 header = mapOf("KEY" to "VALUE")
             )
-        )
-    ),
+        ),
     title = "CONTENT_TITLE",
     imageUrl = "COVER_IMAGE",
     thumbnailSeekingUrl = "VTT_FOR_THUMBNAIL_SEEK_URL",

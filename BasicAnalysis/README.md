@@ -5,7 +5,7 @@ AnalyticsConfig when creating the player.
 
 # Prerequisites
 
-To implement analytics capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/tree/main/BasicPlayback) section.  
+To implement analytics capabilities in your app, please follow the steps outlined in the [**BasicPlayback**](https://github.com/BlendVision/Android-Player-SDK/blob/main/BasicPlayback) section.  
 
 ## Basic Usage
 
