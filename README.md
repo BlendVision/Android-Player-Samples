@@ -7,37 +7,6 @@ Our player provides convenient APIs for DRM, media controllers, and a generic UI
 ## How to install BlendVision Player SDK
 [**Android-Player-SDK**](https://github.com/BlendVision/Android-Player-SDK)
 
-## Sample App Setup Instructions
-
-### Player license
-BlendVision Player license key is obtained by logging into BlendVision CMS (https://app.one.blendvision.com/en/dashboard) and navigating to `VOD -> select one of content -> share icon -> Player SDK -> License Key` to find the license.
-
-#### The license key can be add by following two ways:
-1. Dynamically coding (license lifecycle scope only for current player instance)
-    ```kotlin
-    private var player: UniPlayer? = null
-    
-    player = UniPlayer.Builder(
-        requireContext(),
-        PlayerConfig(
-            license = "{YOUR_PLAYER_LICENSE}"
-        )
-    ).build()
-    
-    binding.kksPlayerServiceView.setUnifiedPlayer(player)
-    ```
-2. Application manifest (license lifecycle scope for all players in your application)
-    ```xml
-    <meta-data 
-        android:name="UNI_PLAYER_LICENSE_KEY" 
-        android:value="{YOUR_PLAYER_LICENSE}"
-    />
-    ```
-
-> **Note**:
->   1. The order player adopts is first check PlayerConfig and then check meta-data.
->   2. If the license key is not correctly set, you will encounter a 20403 error.
-
 ## Available Sample Apps
 
 All examples are provided in Kotlin :+1:
