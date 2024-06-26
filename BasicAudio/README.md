@@ -23,7 +23,7 @@ To implement audio capabilities in your app, please follow the steps outlined in
 ```kotlin
 private fun initializePlayer() {
     val playerConfig = PlayerConfig(isLoopEnabled = true, playLogger = object : PlayLogger {
-        override fun logEvent(eventName: String, properties: Map<String, Any>) {
+        override fun onLogEvent(logEvent: LogEvent, properties: Map<LogProperty, Any>) {
             // log event callback
         }
     })
