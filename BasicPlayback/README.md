@@ -121,7 +121,7 @@ binding.playerView.onDestroy()
 PlayerConfig(
     ...,
     playLogger = object : PlayLogger {
-        override fun logEvent(eventName: String, properties: Map<String, Any>) {
+        override fun onLogEvent(logEvent: LogEvent, properties: Map<LogProperty, Any>) {
             // do something
         }
     }
