@@ -2,6 +2,8 @@ package com.blendvision.player.basic.audio.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
+import com.blendvision.player.common.presentation.entity.log.LogEvent
+import com.blendvision.player.common.presentation.entity.log.LogProperty
 import com.blendvision.player.playback.presentation.UniPlayer
 import com.blendvision.player.playback.presentation.entity.MediaConfig
 import com.blendvision.player.playback.presentation.entity.PlayerConfig
@@ -38,7 +40,7 @@ class MainViewModel:ViewModel() {
                 license = PLAYER_LICENSE,
                 isLoopEnabled = true,
                 playLogger = object : PlayLogger {
-                    override fun logEvent(eventName: String, properties: Map<String, Any>) {
+                    override fun onLogEvent(logEvent: LogEvent, properties: Map<LogProperty, Any>) {
 
                     }
                 }
