@@ -7,7 +7,6 @@ android {
 }
 
 dependencies {
-    implementation(library.cast.framework)
     implementation(library.bundles.player)
     implementation(library.bundles.common)
 }
