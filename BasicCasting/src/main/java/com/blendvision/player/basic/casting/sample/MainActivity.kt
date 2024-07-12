@@ -14,8 +14,6 @@ import com.blendvision.player.playback.cast.presentation.entity.CastMetaData
 import com.blendvision.player.playback.cast.presentation.entity.CastOptions
 import com.blendvision.player.playback.presentation.entity.MediaConfig
 import com.blendvision.player.playback.presentation.entity.PanelType
-import com.google.android.gms.cast.CastDevice
-import com.google.android.gms.cast.MediaQueueItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,7 +63,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDisconnected() {}
             override fun onMessageReceive(
-                castDevice: CastDevice,
                 namespace: String,
                 message: String
             ) {
@@ -74,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             override fun onMessageReceiveError(errorMessage: String) {}
             override fun onMetaDataChanged(metadata: CastMetaData) {}
             override fun onRemoteClientPlayerStatusUpdated(playerState: Int) {}
-            override fun onStartCasting(media: MediaQueueItem) {}
+            override fun onStartCasting() {}
             override fun onStopCasting() {}
         })
     }
@@ -95,6 +92,9 @@ class MainActivity : AppCompatActivity() {
             disableControlPanel = null
         )
 
+        viewBinding.playerView.setupBottomMenuItems(
+            listOf(castButton)
+        )
 
         viewBinding.playerView.setUnifiedPlayer(mainViewModel.getPlayer())
 
@@ -127,8 +127,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     sealed class CreateCastButtonType {
-        object DEFAULT : CreateCastButtonType()
-        object MANUAL : CreateCastButtonType()
+        data object DEFAULT : CreateCastButtonType()
+        data object MANUAL : CreateCastButtonType()
     }
 
 }

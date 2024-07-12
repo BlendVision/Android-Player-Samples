@@ -14,7 +14,7 @@
         <!--This meta data is used for Google Cast framework-->
         <meta-data
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="com.kkstream.basiccasting.sample.CastOptionsProvider" />
+            android:value="com.blendvision.player.basic.casting.sample.CastOptionsProvider" />
 
         <activity
             android:name="com.blendvision.player.basic.casting.sample.MainActivity"
