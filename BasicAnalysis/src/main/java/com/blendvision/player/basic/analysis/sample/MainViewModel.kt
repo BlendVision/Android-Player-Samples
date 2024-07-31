@@ -2,7 +2,7 @@ package com.blendvision.player.basic.analysis.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.blendvision.player.analytics.presentation.main.AnalyticsConfig
+import com.blendvision.player.common.presentation.entity.analytics.AnalyticsConfig
 import com.blendvision.player.common.presentation.entity.log.LogEvent
 import com.blendvision.player.common.presentation.entity.log.LogProperty
 import com.blendvision.player.playback.presentation.UniPlayer
