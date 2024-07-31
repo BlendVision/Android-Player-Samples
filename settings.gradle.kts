@@ -5,6 +5,7 @@ pluginManagement {
     repositories {
         google {
             content {
+                includeGroupByRegex("com\\.blendvision.*")
                 includeGroupByRegex("com\\.android.*")
                 includeGroupByRegex("com\\.google.*")
                 includeGroupByRegex("androidx.*")
