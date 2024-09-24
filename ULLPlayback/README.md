@@ -45,7 +45,7 @@ private var player: UniPlayer? = null
 player = UniPlayer.Builder(
   requireContext(),
   PlayerConfig(
-    license = "YOUR_LICENSE_KEY"
+    licenseKey = "YOUR_LICENSE_KEY"
   )
 ).build()
 

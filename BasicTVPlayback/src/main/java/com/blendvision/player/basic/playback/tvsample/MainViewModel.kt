@@ -28,7 +28,7 @@ class MainViewModel : ViewModel() {
         player = UniPlayer.Builder(
             context,
             PlayerConfig(
-                license = PLAYER_LICENSE,
+                licenseKey = PLAYER_LICENSE,
                 playLogger = object : PlayLogger {
                     override fun onLogEvent(logEvent: LogEvent, properties: Map<LogProperty, Any>) {
 

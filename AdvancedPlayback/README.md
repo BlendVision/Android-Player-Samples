@@ -48,7 +48,7 @@ private var player: UniPlayer? = null
 player = UniPlayer.Builder(
   requireContext(),
   PlayerConfig(
-    license = "YOUR_LICENSE_KEY"
+    licenseKey = "YOUR_LICENSE_KEY"
   )
 ).build()
 
@@ -85,7 +85,7 @@ val mediaConfig = MediaConfig(
 companion object {
     private const val MPD_URL = "{YOUR_MPD_URL}"
 
-    private const val DRM_LICENSE_URL = "https://drm.platform.blendvision.com/api/v3/drm/license"
+    private const val DRM_LICENSE_URL = "https://drm.platform.blendvision.com/api/v3/drm/licenseKey"
     private const val DRM_HEADER_KEY = "x-custom-data"
     private const val TOKEN = "{YOUR_PLAYBACK_TOKEN}"
     private const val DRM_HEADER_VALUE = "token_type=upfront&token_value=$TOKEN"
