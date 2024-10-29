@@ -161,9 +161,9 @@ player?.addStateEventListener(object : StateEventListener {
 
     override fun onPlayerStateChanged(
         playWhenReady: Boolean,
-        playbackState: PaaSProvider.PlaybackState
+        playerState: PaaSProvider.PlayerState
     ) {
-        // PlaybackState {IDLE, BUFFERING, READY, ENDED}
+        // PlayerState {IDLE, BUFFERING, READY, ENDED}
     }
 
     override fun onVideoSizeChanged(
