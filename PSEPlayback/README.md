@@ -53,9 +53,9 @@ binding.playerView.setUnifiedPlayer(player)
 
 ## Prepare media content and enable PSE
 - To enable PSE, need the following criteria
-1. Content must not be DRM protected
-2. Player license allowed PSE feature
-3. `MediaConfig` should set the `Feature.PSE`
+    1. Content must not be DRM protected
+    2. Player license allowed PSE feature
+    3. `MediaConfig` should set the `Feature.PSE`
 
 - Example
 ```kotlin
