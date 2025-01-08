@@ -33,5 +33,6 @@ the setup for playback of DASH streams with DRM support, enable Thumbnail Seekin
 using UniPlayer.  
 [**ULLPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/ULLPlayback):
 Illustrates the setup for ultra-low latency playback of DASH streams using UniPlayer.  
-
+[**PSEPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/PSEPlayback):
+Illustrates the setup for PSE playback of DASH streams using UniPlayer.  
 

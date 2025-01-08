@@ -3,8 +3,8 @@ package com.blendvision.player.pse.playback.sample
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.blendvision.player.playback.presentation.callback.DefaultDialogEventListener
 import com.blendvision.player.playback.presentation.entity.PanelType
-import com.blendvision.player.playback.presentation.entity.SettingOptionConfig
 import com.blendvision.player.pse.playback.sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             autoKeepScreenOnEnabled = true,
             defaultPanelType = PanelType.EMBEDDED
         )
+
+        // [Optional] Setup the error popup dialog if needed
+        val defaultDialogEventListener = DefaultDialogEventListener(this, viewBinding.playerView)
+        viewBinding.playerView.setDialogEventListener(defaultDialogEventListener)
 
         viewBinding.playerView.setUnifiedPlayer(mainViewModel.getPlayer())
 
