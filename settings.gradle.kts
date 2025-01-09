@@ -43,6 +43,7 @@ include(":BasicDownload")
 include(":BasicTVPlayback")
 include(":AdvancedPlayback")
 include(":ULLPlayback")
+include(":PSEPlayback")
 
 fun getLocalProperties(): Properties {
     val properties = Properties()
