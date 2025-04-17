@@ -11,9 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import com.blendvision.player.basic.download.sample.databinding.ActivityMainBinding
 import com.blendvision.player.basic.download.sample.factory.MainViewModelFactory
 import com.blendvision.player.playback.presentation.callback.DefaultDialogEventListener
-import com.blendvision.player.playback.presentation.entity.PanelType
-import com.blendvision.player.playback.presentation.entity.SettingOptionConfig
 import com.blendvision.player.playback.presentation.menu.DefaultMenuFactory
+import com.blendvision.player.playback.presentation.model.PanelType
+import com.blendvision.player.playback.presentation.model.SettingOptionConfig
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

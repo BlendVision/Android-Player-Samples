@@ -5,14 +5,14 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.download.sample.MainViewModel
-import com.blendvision.player.common.presentation.entity.log.LogEvent
-import com.blendvision.player.common.presentation.entity.log.LogProperty
+import com.blendvision.player.common.presentation.model.log.LogEvent
+import com.blendvision.player.common.presentation.model.log.LogProperty
 import com.blendvision.player.download.presentation.Downloader
-import com.blendvision.player.download.presentation.entity.DownloadTrackSelection
-import com.blendvision.player.download.presentation.entity.DownloadableTracks
+import com.blendvision.player.download.presentation.model.DownloadTrackSelection
+import com.blendvision.player.download.presentation.model.DownloadableTracks
 import com.blendvision.player.playback.presentation.UniPlayer
-import com.blendvision.player.playback.presentation.entity.PlayerConfig
 import com.blendvision.player.playback.presentation.logger.PlayLogger
+import com.blendvision.player.playback.presentation.model.PlayerConfig
 
 @Suppress("UNCHECKED_CAST")
 class MainViewModelFactory(

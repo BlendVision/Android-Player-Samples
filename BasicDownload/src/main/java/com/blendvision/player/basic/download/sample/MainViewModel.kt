@@ -2,9 +2,9 @@ package com.blendvision.player.basic.download.sample
 
 import androidx.lifecycle.ViewModel
 import com.blendvision.player.download.presentation.Downloader
-import com.blendvision.player.download.presentation.entity.DownloadConfig
+import com.blendvision.player.download.presentation.model.DownloadConfig
 import com.blendvision.player.playback.presentation.UniPlayer
-import com.blendvision.player.playback.presentation.entity.OfflineMediaConfig
+import com.blendvision.player.playback.presentation.model.OfflineMediaConfig
 
 class MainViewModel(
     private val downloader: Downloader,
