@@ -2,12 +2,12 @@ package com.blendvision.player.basic.casting.sample
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.blendvision.player.common.presentation.entity.log.LogEvent
-import com.blendvision.player.common.presentation.entity.log.LogProperty
+import com.blendvision.player.common.presentation.model.log.LogEvent
+import com.blendvision.player.common.presentation.model.log.LogProperty
 import com.blendvision.player.playback.presentation.UniPlayer
-import com.blendvision.player.playback.presentation.entity.MediaConfig
-import com.blendvision.player.playback.presentation.entity.PlayerConfig
 import com.blendvision.player.playback.presentation.logger.PlayLogger
+import com.blendvision.player.playback.presentation.model.MediaConfig
+import com.blendvision.player.playback.presentation.model.PlayerConfig
 
 class MainViewModel : ViewModel() {
 

@@ -9,11 +9,11 @@ import com.blendvision.player.basic.casting.sample.cast_button.ManualCastButton
 import com.blendvision.player.basic.casting.sample.databinding.ActivityMainBinding
 import com.blendvision.player.playback.cast.presentation.CaaS
 import com.blendvision.player.playback.cast.presentation.callback.CastEventListener
-import com.blendvision.player.playback.cast.presentation.entity.CastImage
-import com.blendvision.player.playback.cast.presentation.entity.CastMetaData
-import com.blendvision.player.playback.cast.presentation.entity.CastOptions
-import com.blendvision.player.playback.presentation.entity.MediaConfig
-import com.blendvision.player.playback.presentation.entity.PanelType
+import com.blendvision.player.playback.cast.presentation.model.CastImage
+import com.blendvision.player.playback.cast.presentation.model.CastMetaData
+import com.blendvision.player.playback.cast.presentation.model.CastOptions
+import com.blendvision.player.playback.presentation.model.MediaConfig
+import com.blendvision.player.playback.presentation.model.PanelType
 
 class MainActivity : AppCompatActivity() {
 

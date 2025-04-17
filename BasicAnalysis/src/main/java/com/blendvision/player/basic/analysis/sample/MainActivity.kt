@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.blendvision.player.basic.analysis.sample.databinding.ActivityMainBinding
-import com.blendvision.player.playback.presentation.entity.PanelType
-import com.blendvision.player.playback.presentation.entity.SettingOptionConfig
+import com.blendvision.player.playback.presentation.model.PanelType
+import com.blendvision.player.playback.presentation.model.SettingOptionConfig
 
 class MainActivity : AppCompatActivity() {
 
