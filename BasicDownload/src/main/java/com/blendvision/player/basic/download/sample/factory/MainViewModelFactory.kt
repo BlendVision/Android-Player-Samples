@@ -23,7 +23,7 @@ class MainViewModelFactory(
         val downloader = Downloader.Builder(context)
             .setTrackSelectorCallback(
                 object : DownloadTrackSelection.Callback {
-                    override suspend fun selectTrack(downloadableTracks: DownloadableTracks): DownloadTrackSelection {
+                    override suspend fun selectTrack(mpdUrl: String, downloadableTracks: DownloadableTracks): DownloadTrackSelection {
                         return DownloadTrackSelection(
                             downloadableTracks.videoTracks[0],
                             downloadableTracks.audioTracks[0]
