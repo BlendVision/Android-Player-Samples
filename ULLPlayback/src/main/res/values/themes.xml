@@ -1,8 +1,0 @@
-<resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.Material3.DynamicColors.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-</resources>
