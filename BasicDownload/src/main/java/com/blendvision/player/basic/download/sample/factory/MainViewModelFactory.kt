@@ -26,7 +26,7 @@ class MainViewModelFactory(
                     override suspend fun selectTrack(mpdUrl: String, downloadableTracks: DownloadableTracks): DownloadTrackSelection {
                         return DownloadTrackSelection(
                             downloadableTracks.videoTracks[0],
-                            downloadableTracks.audioTracks[0]
+                            downloadableTracks.audioTracks
                         )
                     }
                 }
