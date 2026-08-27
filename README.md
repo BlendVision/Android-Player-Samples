@@ -31,8 +31,6 @@ Illustrates the setup for basic TV playback of DASH streams using UniPlayer.
 [**AdvancedPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/AdvancedPlayback): Illustrates
 the setup for playback of DASH streams with DRM support, enable Thumbnail Seeking, UI Customization
 using UniPlayer.  
-[**ULLPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/ULLPlayback):
-Illustrates the setup for ultra-low latency playback of DASH streams using UniPlayer.  
 [**PSEPlayback**](https://github.com/BlendVision/Android-Player-Samples/tree/main/PSEPlayback):
 Illustrates the setup for PSE playback of DASH streams using UniPlayer.  
 
